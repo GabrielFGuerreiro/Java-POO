@@ -1,7 +1,6 @@
 /*Modificar a classe Livraria: encapsular os atributos como private e
 inserir os métodos set ( ) e get ( ) para cada um deles. */
 
-package exemplo2_1;
 import javax.swing.JOptionPane;	
 
 public class Livraria_exerc

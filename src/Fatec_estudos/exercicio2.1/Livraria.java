@@ -1,4 +1,4 @@
-package exemplo2_1;
+
 import javax.swing.JOptionPane;	
 
 public class Livraria
