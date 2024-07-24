@@ -30,7 +30,9 @@ São as ações que o objeto pode realizar.
 É um método especial responsável por criar o objeto da classe (instanciando a classe que foi definida), sendo chamado automaticamente quando o objeto é instanciado/criado.
 Ele é usado para inicializar os atributos da classe com valores específicos no momento da criação do objeto.  
 Um método construtor pode receber parâmetros e atribuir esses valores diretamente aos atributos da classe.  
-Exemplo: public Padaria(String nome, String rua, int numeroFuncionarios){...}   
+Exemplo:  
+public Padaria(String nome, String localizacao, int numeroFuncionarios)  
+{ ... }.
     
 ## Encapsulamento
 É a forma como os elementos da classe podem ser vistos e utilizados por outras classes. Serve para proteger a integridade dos dados de uma classe, controlando o acesso a esses dados.  
@@ -39,3 +41,13 @@ Utiliza-se os modificadores de acesso:
 - protected: deixará a classe/membro visível apenas para as classes do mesmo pacote;
 - private: deixará o atributo visível apenas para a classe em que este atributo se encontra;  
 - package-private: é o modificador padrão quando outro não é definido. Similar ao protected.
+
+## Métodos de acesso
+Os métodos set e get são usados para manipular os atributos de uma classe PRIVADA de forma controlada. Eles permitem definir (set) e obter (get) os valores desses atributos.
+### Set
+O método set é utilizado para alterar os valores dos atributos de um objeto APÓS a criação, a qualquer momento DURANTE a execução.
+Ele recebe um valor como argumento e atribui a um atributo da classe.  
+Exemplo: public void setNome(String nome) { this.nome = nome; }.
+### Get
+É usado para acessar o valor de um atributo privado de uma classe. Esse método não recebe nenhum parâmetro e apenas retorna o valor atual do atributo.  
+Exemplo: public void getNome() { return = nome; }.
