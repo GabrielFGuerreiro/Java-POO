@@ -25,3 +25,17 @@ São as características (variáveis) do objeto.
 
 ## Métodos
 São as ações que o objeto pode realizar.
+
+## Método construtor
+É um método especial responsável por criar o objeto da classe (instanciando a classe que foi definida), sendo chamado automaticamente quando o objeto é instanciado/criado.
+Ele é usado para inicializar os atributos da classe com valores específicos no momento da criação do objeto.  
+Um método construtor pode receber parâmetros e atribuir esses valores diretamente aos atributos da classe.  
+Exemplo: public Padaria(String nome, String rua, int numeroFuncionarios){...}   
+    
+## Encapsulamento
+É a forma como os elementos da classe podem ser vistos e utilizados por outras classes. Serve para proteger a integridade dos dados de uma classe, controlando o acesso a esses dados.  
+Utiliza-se os modificadores de acesso:
+- public: deixará a classe/membro visível para todas as outras classes e pacotes do projeto;  
+- protected: deixará a classe/membro visível apenas para as classes do mesmo pacote;
+- private: deixará o atributo visível apenas para a classe em que este atributo se encontra;  
+- package-private: é o modificador padrão quando outro não é definido. Similar ao protected.
