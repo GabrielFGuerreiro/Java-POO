@@ -51,3 +51,8 @@ Exemplo: public void setNome(String nome) { this.nome = nome; }.
 ### Get
 É usado para acessar o valor de um atributo privado de uma classe. Esse método não recebe nenhum parâmetro e apenas retorna o valor atual do atributo.  
 Exemplo: public void getNome() { return = nome; }.
+
+## Herança
+Esse conceito permite que uma classe (conhecida como classe filha/subclasse) herde (compartilhe) os atributos e métodos de outra classe (classe pai/superclasse).
+- As classes situadas na hierarquia inferior da herança herdam atributos e métodos das classes acima.
+- Método super():acessa o método construtor da classe que está imediatamente acima na hierarquia da Herança.
