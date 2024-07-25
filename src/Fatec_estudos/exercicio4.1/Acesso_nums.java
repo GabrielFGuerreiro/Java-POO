@@ -1,5 +1,4 @@
-package exemplo4_1;
-
+ 
 public class Acesso_nums
 {
 	

@@ -1,5 +1,4 @@
-package exemplo6;
-
+ 
 //Classefilha1 herda os atributos e métodos de Superclasse
 public class Classefilha1 extends Superclasse
 {

@@ -1,5 +1,4 @@
-package exemplo8;
-
+ 
 public class Acessa_facul
 {
     public static void main(String[] args)

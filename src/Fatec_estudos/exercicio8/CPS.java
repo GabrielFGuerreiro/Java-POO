@@ -1,5 +1,4 @@
-package exemplo8;
-
+ 
 public class CPS
 {
     private String fatec,cidade;

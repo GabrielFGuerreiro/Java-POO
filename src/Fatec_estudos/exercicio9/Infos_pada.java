@@ -1,5 +1,4 @@
-package exemplo9;
-
+ 
 public class Infos_pada
 {
     public static void main(String[] args)

@@ -1,5 +1,4 @@
-package exemplo7;
-
+ 
 public class Funcionario extends Pessoa_fisica
 {
     private String cartao;

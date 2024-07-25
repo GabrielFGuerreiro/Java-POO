@@ -1,5 +1,4 @@
-package exemplo8;
-
+ 
 public class Facul_CEETEP extends CPS
 {
     private String facul;

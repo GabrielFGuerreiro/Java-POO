@@ -2,8 +2,7 @@
 os método(s) set e get para inserir e retornar os valores dos atributos.
 Considerar um método construtor da abstração padaria de modo que um quarto atributo possa
 ter o seu valor inserido neste método construtor. */
-package exemplo9;
-
+ 
 public class Padaria
 {
     private int valorpao;

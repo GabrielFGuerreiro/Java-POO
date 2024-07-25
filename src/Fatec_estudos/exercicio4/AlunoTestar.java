@@ -1,5 +1,4 @@
-package exemplo4;
-
+ 
 public class AlunoTestar
 {
     public static void main(String[] args)

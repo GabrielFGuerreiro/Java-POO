@@ -1,5 +1,4 @@
-package exemplo6;
-
+ 
 public class Conceito_heranca
 {
     public static void main(String[] args)

@@ -1,5 +1,4 @@
-package exemplo7;
-
+ 
 public class Pessoa_juridica extends Contribuinte
 {
     private String cnpj;

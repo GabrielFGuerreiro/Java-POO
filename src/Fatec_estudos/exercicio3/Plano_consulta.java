@@ -1,4 +1,3 @@
-package exemplo3;
 
 public class Plano_consulta
 {

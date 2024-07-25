@@ -1,5 +1,4 @@
-package exemplo5;
-
+ 
 public class Dados_contribuinte
 {
 	private String nome;

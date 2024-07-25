@@ -1,5 +1,4 @@
-package exemplo6;
-
+ 
 public class Classefilha2 extends Classefilha1
 {
     Classefilha2()

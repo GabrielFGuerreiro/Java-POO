@@ -1,5 +1,4 @@
-package exemplo7;
-
+ 
 public class Contribuinte
 {
     private String nome;

@@ -1,5 +1,4 @@
-package exemplo9;
-
+ 
 import javax.swing.JOptionPane;
 
 public class Infos_pada2

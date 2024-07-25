@@ -1,7 +1,6 @@
 //Herança 2
 
-package exemplo7;
-
+ 
 import javax.swing.JOptionPane;
 
 public class Usa_funci

@@ -7,7 +7,6 @@ conteúdo programático, critério de avaliação e bibliografia;
 inserir os valores dos atributos através do método construtor e pelos métodos sets( );
 6. Retornar os valores inseridos pelos métodos gets( ), mostrando-os no console */
 
-package exemplo3;
 
 public class Plano_de_ensino
 {

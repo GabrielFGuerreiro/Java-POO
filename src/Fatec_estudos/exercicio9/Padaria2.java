@@ -1,7 +1,6 @@
 /*Escrever código da aplicação para inserir valores dos atributos da padaria, e
 chamar os métodos para retornar estes atributos. */
-package exemplo9;
-
+ 
 public class Padaria2
 {
     private int valorpao;

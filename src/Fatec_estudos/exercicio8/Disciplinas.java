@@ -1,5 +1,4 @@
-package exemplo8;
-
+ 
 public class Disciplinas extends Facul_CEETEP
 {
     private String nome_disciplina;

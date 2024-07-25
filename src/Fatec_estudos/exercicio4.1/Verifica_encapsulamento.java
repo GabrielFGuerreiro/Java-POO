@@ -1,5 +1,4 @@
-package exemplo4_1;
-
+ 
 public class Verifica_encapsulamento
 {
 		public static void main(String[] args)

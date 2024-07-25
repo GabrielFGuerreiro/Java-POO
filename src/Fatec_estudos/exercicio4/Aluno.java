@@ -1,5 +1,4 @@
-package exemplo4;
-
+ 
 public class Aluno
 {
     //privaapenas pode ser acessado pela própria classe

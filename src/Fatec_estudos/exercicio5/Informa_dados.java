@@ -1,6 +1,5 @@
 //Protótipo
-package exemplo5;
-
+ 
 import 	java.awt.*; //importando todas(*) as classes do pacote java.awt
 import 	java.awt.event.*; //importando todas(*) as classes do pacote java.awt.event
 import 	javax.swing.*; //importando todas(*) as classes do pacote javax.swing

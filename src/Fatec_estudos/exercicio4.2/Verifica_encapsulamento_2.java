@@ -1,5 +1,4 @@
-package exemplo4_2;
-
+ 
 //Importando a classe Acesso_nums do pacote exemplo4_1
 import exemplo4_1.Acesso_nums;
 

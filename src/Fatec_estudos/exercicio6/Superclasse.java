@@ -1,6 +1,5 @@
 //Herença
-package exemplo6;
-
+ 
 public class Superclasse
 {
     private String atributo1;

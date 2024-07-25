@@ -1,5 +1,4 @@
-package exemplo7;
-
+ 
 public class Pessoa_fisica extends Contribuinte
 {
     private String rg;
