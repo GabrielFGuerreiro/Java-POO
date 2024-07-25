@@ -56,3 +56,41 @@ Exemplo: public void getNome() { return = nome; }.
 Esse conceito permite que uma classe (conhecida como classe filha/subclasse) herde (compartilhe) os atributos e métodos de outra classe (classe pai/superclasse).
 - As classes situadas na hierarquia inferior da herança herdam atributos e métodos das classes acima.
 - Método super():acessa o método construtor da classe que está imediatamente acima na hierarquia da Herança.
+
+## Polimorfismo
+O Polimorfismo (poli = muitas, morphos = formas), ou sobrescrita, é o conceito no qual classes derivadas de uma mesma superclasse fornecem implementações (comportamentos) específicas de um método que já está sendo usado pela classe pai.  
+Cada um desses métodos derivados têm a mesma identificação (assinatura/nome), mas funcionamentos diferentes, e usam como referência o tipo do método da superclasse.  
+Isso permite que objetos de diferentes classes respondam de maneira diferente a uma mesma CHAMADA de método.  
+Em outras palavras, um mesmo método pode apresentar várias formas, de acordo com seu contexto; é a modificação do comportamento de um método existente da classe modelo.  
+
+O polimorfismo torna o código mais flexível, modular e fácil de entender e dar manutenção, pois permite que o comportamento dos objetos seja determinado em tempo de execução, dependendo do tipo do objeto.
+Isso promove a reutilização de código e a abstração, que são princípios fundamentais na programação orientada a objetos.  
+
+public class Animal  
+{    
+    public void fazerSom() { System.out.println("Som genérico de animal."); }  
+}  
+    
+public class Cachorro extends Animal  
+{    
+    //Override  
+    public void fazerSom() { System.out.println("Au au!"); }  
+}  
+    
+public class Gato extends Animal  
+{  
+    //Override  
+    public void fazerSom() { System.out.println("Miau!"); }  
+}  
+    
+public class Main  
+{  
+    public static void main(String[] args)  
+    {  
+        Animal animal1 = new Cachorro();  
+        Animal animal2 = new Gato();   
+            
+        animal1.fazerSom(); //"Au au!"   
+        animal2.fazerSom(); //"Miau!"  
+    }  
+}  
