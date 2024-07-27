@@ -99,3 +99,17 @@ public class Main
 AWT (Abstract Window Toolkit) é uma biblioteca gráfica em Java que fornece classes e métodos para criar interfaces gráficas de usuário (GUI), como  como janelas, botões, caixas de texto, menus, etc, em aplicativos Java. Como limitação, ela pode ter uma aparência e comportamento diferentes em diferentes sistemas operacionais.  
 Outras bibliotecas gráficas, como Swing e JavaFX, foram construídas em cima da AWT, estendendo suas funcionalidades e superando algumas de suas limitações.
 A biblioteca swing fornece um conjunto mais avançado de componentes de interface gráfica de usuário (GUI) em comparação com o pacote java.awt. Ele fornece componentes gráficos mais avançados e flexíveis, barras de rolagem, tabelas, painéis, entre outros. Além disso, ele oferece suporte a recursos adicionais, como layout gerenciado pelo sistema, suporte a ícones, diálogos modais, entre outros.
+
+## Sobrecarga
+A sobrecarga (overloading) em Java é uma característica que permite a criação de vários métodos com o mesmo nome, mas com diferentes listas de parâmetros (assinaturas). Isso significa que você pode definir várias versões de um método na mesma classe (ou em uma classe que a herda), desde que cada versão tenha um conjunto distinto de parâmetros (com base na quantidade, nos tipos e na ordem de parâmetros). Neste exemplo, o método soma é sobrecarregado três vezes com diferentes assinaturas:  
+    
+public class Calculadora {  
+    // Método para somar dois inteiros  
+    public int soma(int a, int b) { return a + b; }  
+
+    // Método para somar três inteiros  
+    public int soma(int a, int b, int c) { return a + b + c; }  
+
+    // Método para somar dois números de ponto flutuante  
+    public double soma(double a, double b) { return a + b; }  
+}  
