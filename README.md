@@ -113,3 +113,6 @@ public class Calculadora {
     // Método para somar dois números de ponto flutuante  
     public double soma(double a, double b) { return a + b; }  
 }  
+
+## Classe abstrada
+Uma classe abstrata não pode ser instanciada (criação de um objeto) diretamente e é utilizada como uma classe-base (modelo) para outras classes. Ela pode conter métodos abstratos, que são métodos declarados sem implementação (sem corpo). Esses métodos precisam, obrigatoriamente, ser implementados pelas classes que herdam a classe abstrata. Além disso, uma classe abstrata pode conter métodos concretos, que possuem implementação, bem como variáveis e construtores.
