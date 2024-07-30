@@ -1,4 +1,4 @@
-package Abstrata;
+package exercicio21;
 
 public abstract class Conceito
 {

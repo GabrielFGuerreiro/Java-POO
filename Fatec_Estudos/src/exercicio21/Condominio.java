@@ -1,4 +1,4 @@
-package Abstrata;
+package exercicio21;
 
 public class Condominio extends Conceito
 {
