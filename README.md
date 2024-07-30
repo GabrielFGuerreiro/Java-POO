@@ -35,12 +35,12 @@ public Padaria(String nome, String localizacao, int numeroFuncionarios)
 { ... }.
     
 ## Encapsulamento
-É a forma como os elementos da classe podem ser vistos e utilizados por outras classes. Serve para proteger a integridade dos dados de uma classe, controlando o acesso a esses dados.  
+É a forma como as CLASSES, MÉTODOs ou VARIÁVEIS podem ser vistos e utilizados por outras classes (e seus métodos/variáveis). Serve para proteger a integridade dos dados de uma classe, controlando o acesso a eles.  
 Utiliza-se os modificadores de acesso:
-- public: deixará a classe/membro visível para todas as outras classes e pacotes do projeto;  
-- protected: deixará a classe/membro visível apenas para as classes do mesmo pacote;
-- private: deixará o atributo visível apenas para a classe em que este atributo se encontra;  
-- package-private: é o modificador padrão quando outro não é definido. Similar ao protected.
+- public: acessível para todas as outras classes e pacotes do projeto;  
+- protected: acessível para as classes do mesmo pacote e subclasses, mesmo que estejam em pacotes diferentes;
+- private: acessível apenas para a classe em que este atributo se encontra;  
+- package-private: é o modificador padrão quando outro não é definido. Similar ao protected, porém não deixa acessível as subclasses.
 
 ## Métodos de acesso
 Os métodos set e get são usados para manipular os atributos de uma classe PRIVADA de forma controlada. Eles permitem definir (set) e obter (get) os valores desses atributos.
