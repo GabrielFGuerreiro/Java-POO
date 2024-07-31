@@ -116,3 +116,6 @@ public class Calculadora {
 
 ## Classe abstrata
 Uma classe abstrata não pode ser instanciada (criação de um objeto) diretamente e é utilizada como uma classe-base (modelo) para outras classes. Ela pode conter métodos abstratos, que são métodos declarados sem implementação (sem corpo). Esses métodos precisam, obrigatoriamente, ser implementados pelas classes que herdam a classe abstrata. Além disso, uma classe abstrata pode conter métodos concretos, que possuem implementação, bem como variáveis e construtores.
+
+## Interface
+Na orientação a objetos uma interface é uma referência que determina uma série de requisitos que uma classe deva conter. As classes que implementam uma interface devem, obrigatoriamente, fornecer implementações para todos os métodos da interface. Uma interface é similar a uma classe abstrata, porém não permite a implementação de métodos, contendo apenas a especificação destes. 
