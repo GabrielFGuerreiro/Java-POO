@@ -133,3 +133,18 @@ Ex1: PlanoDeEnsino plano1 = new PlanoDeEnsino();
 
 Ex2: Classe_pai classe = new Classe_filha();  
 Se a Classe filha herda da Classe pai, então há como declarar um objeto de subclasse usando uma referência de superclasse, mas não o contrário.
+
+### Tipo "final"
+Em Java, uma variável final é uma variável cuja referência ou valor, uma vez atribuído, não pode ser alterado. Exemplo:  
+
+public class ExemploFinal  
+{  
+    public void metodo()  
+    {  
+        final int numero = 10;  
+        // numero = 20; // Isso causará um erro de compilação  
+    }  
+}   
+
+O uso da palavra-chave final ajuda a escrever código mais seguro e fácil de entender, pois deixa claro quais variáveis são constantes após sua inicialização.
+
