@@ -119,3 +119,17 @@ Uma classe abstrata não pode ser instanciada (criação de um objeto) diretamen
 
 ## Interface
 Na orientação a objetos uma interface é uma referência que determina uma série de requisitos que uma classe deva conter. As classes que implementam uma interface devem, obrigatoriamente, fornecer implementações para todos os métodos da interface. Uma interface é similar a uma classe abstrata, porém não permite a implementação de métodos, contendo apenas a especificação destes. 
+
+## Outras informações úteis
+
+### Sobre a instacianção de um objeto:
+|classe| |variável| = |new| |classe()|;
+
+Ex1: PlanoDeEnsino plano1 = new PlanoDeEnsino();  
+
+1."PlanoDeEnsino" (antes da variável) é o tipo da variável. Declara que "plano1" é um atributo que pode armazenar uma referência a um objeto do tipo "PlanoDeEnsino";  
+2."new" é o operador que aloca memória para o novo objeto e chama o construtor da classe;  
+3.O segundo "PlanoDeEnsino" (depois do new) é a chamada ao construtor da classe que será instanciada para criar o objeto.
+
+Ex2: Classe_pai classe = new Classe_filha();  
+Se a Classe filha herda da Classe pai, então há como declarar um objeto de subclasse usando uma referência de superclasse, mas não o contrário.
