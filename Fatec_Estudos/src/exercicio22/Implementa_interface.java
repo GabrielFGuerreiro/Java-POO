@@ -1,4 +1,4 @@
-package Pacote_interface;
+package exercicio22;
 
 public class Implementa_interface implements Classe_interface
 {
