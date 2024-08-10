@@ -127,9 +127,9 @@ Na orientação a objetos uma interface é uma referência que determina uma sé
 
 Ex1: PlanoDeEnsino plano1 = new PlanoDeEnsino();  
 
-1."PlanoDeEnsino" (antes da variável) é o tipo da variável. Declara que "plano1" é um atributo que pode armazenar uma referência a um objeto do tipo "PlanoDeEnsino";  
-2."new" é o operador que aloca memória para o novo objeto e chama o construtor da classe;  
-3.O segundo "PlanoDeEnsino" (depois do new) é a chamada ao construtor da classe que será instanciada para criar o objeto.
+1. O 1º"PlanoDeEnsino" é o tipo da variável. Aqui declaramos que "plano1" é uma variável que pode armazenar uma referência a um objeto do tipo "PlanoDeEnsino";  
+2."new" é o operador responsável por instanciar a classe. Ele aloca memória e ocupa fisicamente um endereço para criar efetivamente um novo objeto;  
+3.O 2º "PlanoDeEnsino" é a chamada ao construtor da classe. Esse construtor é o que cria o objeto propriamente dito, utilizando a memória alocada pelo operador "new".
 
 Ex2: Classe_pai classe = new Classe_filha();  
 Se a Classe filha herda da Classe pai, então há como declarar um objeto de subclasse usando uma referência de superclasse, mas não o contrário.
