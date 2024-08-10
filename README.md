@@ -134,6 +134,11 @@ Ex1: PlanoDeEnsino plano1 = new PlanoDeEnsino();
 Ex2: Classe_pai classe = new Classe_filha();  
 Se a Classe filha herda da Classe pai, então há como declarar um objeto de subclasse usando uma referência de superclasse, mas não o contrário.
 
+
+### Tipo "static"
+
+Um membro (classe/várivel/método) do tipo static vai para memória (é instanciado ) no momento de execução, rodando até o término do programa.  
+
 ### Tipo "final"
 Em Java, uma variável final é uma variável cuja referência ou valor, uma vez atribuído, não pode ser alterado. Exemplo:  
 
