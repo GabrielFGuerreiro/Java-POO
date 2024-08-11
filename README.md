@@ -12,16 +12,16 @@ Análise de uma situação do mundo real, decompondo-a nas partes mais fundament
 
 ## Classes
 Abstração de objetos/entidades com características e comportamentos similares entre si.
-Servem como "modelos" para criar objetos, definindo a estrutra e o comportamento que os objetos compartilharão.
+Servem como **"modelos"** para criar objetos, definindo a estrutra e o comportamento que os objetos compartilharão.
 Para isso, dispõe de atributos e métodos.
     
 ## Atributos
-São declarações das classesm (variáveis) que representam características de instância do objeto.  
+São declarações das classes (variáveis) que representam **características** de instância do objeto.  
 int dia;        <-- variável de classe  
 data.dia = 05;  <-- variável de instância  
 
 ## Métodos
-São as ações que o objeto pode realizar.
+São declarações das classes que representam **ações** que a mesma pode executar em função dos valores de seus atributos.  
 
 ## Objetos
 Objeto é uma entidade que pode ser física, conceitual ou de software. Ou seja, uma representação genérica.  
