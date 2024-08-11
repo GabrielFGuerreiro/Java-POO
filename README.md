@@ -48,9 +48,19 @@ Ele é usado para inicializar os atributos da classe com valores. Ele deve possu
 É a forma como as CLASSES, MÉTODOs ou VARIÁVEIS podem ser vistos e utilizados por outras classes (e seus métodos/variáveis). Serve para proteger a integridade dos dados de uma classe, controlando o acesso a eles.  
 Utiliza-se os modificadores de acesso:
 - public: acessível para todas as outras classes e pacotes do projeto;  
-- protected: acessível para as classes do mesmo pacote e subclasses, mesmo que estejam em pacotes diferentes;
+- protected: acessível para as classes do mesmo pacote e subclasses, mesmo que estejam em pacotes diferentes;  
 - private: acessível apenas para a classe em que este atributo se encontra;  
-- package-private: é o modificador padrão quando outro não é definido. Similar ao protected, porém não deixa acessível as subclasses.
+- package-private: é o modificador padrão quando outro não é definido. Similar ao protected, porém não deixa acessível fora do pacote, nem por subclasses;  
+- final: modificador que, aplicado a uma variável, a torna uma constante; aplicado a um método, impede que ele seja sobrescrito; aplicado a uma classe, impede que ela seja estendida;  
+- static: esse membro é compartilhado entre todas as instâncias da classe. Ou seja, você pode acessar o membro static diretamente pela classe, sem precisar criar uma instância. Além disso, um membro (várivel/método) do tipo static vai para memória (é instanciado ) no momento de execução, rodando até o término do programa.  Ex:  
+
+class ClasseEx {  
+    static int contador = 0;  
+}  
+
+// Acesso ao membro static:  
+System.out.println(ClasseEx.contador);  
+
 
 ## Métodos de acesso
 Os métodos set e get são usados para manipular os atributos de uma classe PRIVADA de forma controlada. Eles permitem definir (set) e obter (get) os valores desses atributos.
@@ -129,24 +139,3 @@ Uma classe abstrata não pode ser instanciada (criação de um objeto) diretamen
 
 ## Interface
 Na orientação a objetos uma interface é uma referência que determina uma série de requisitos que uma classe deva conter. As classes que implementam uma interface devem, obrigatoriamente, fornecer implementações para todos os métodos da interface. Uma interface é similar a uma classe abstrata, porém não permite a implementação de métodos, contendo apenas a especificação destes. 
-
-## Outras informações úteis
-
-### Tipo "static"
-
-Um membro (classe/várivel/método) do tipo static vai para memória (é instanciado ) no momento de execução, rodando até o término do programa.  
-
-### Tipo "final"
-Em Java, uma variável final é uma variável cuja referência ou valor, uma vez atribuído, não pode ser alterado. Exemplo:  
-
-public class ExemploFinal  
-{  
-    public void metodo()  
-    {  
-        final int numero = 10;  
-        // numero = 20; // Isso causará um erro de compilação  
-    }  
-}   
-
-O uso da palavra-chave final ajuda a escrever código mais seguro e fácil de entender, pois deixa claro quais variáveis são constantes após sua inicialização.
-
