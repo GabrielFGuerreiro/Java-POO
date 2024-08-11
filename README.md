@@ -33,20 +33,17 @@ Ex: pode haver a classe cachorro que da origem a 3 objetos cachorros, de forma g
 Ex1: PlanoDeEnsino plano1 = new PlanoDeEnsino();  
 
 1. O 1º"PlanoDeEnsino" é o tipo da variável. Aqui declaramos que "plano1" é uma variável que pode armazenar uma referência a um objeto do tipo "PlanoDeEnsino";  
-2."new" é o operador responsável por instanciar a classe. Ele aloca memória e ocupa fisicamente um endereço para criar efetivamente um novo objeto;  
-3.O 2º "PlanoDeEnsino" é a chamada ao construtor da classe. Esse construtor é o que cria o objeto propriamente dito, utilizando a memória alocada pelo operador "new".
+2. A variável "plano1" recebe o endereço do objeto;
+3."new" é o operador responsável por instanciar a classe. Ele aloca memória e ocupa fisicamente um endereço para criar efetivamente um novo objeto;  
+4.O 2º "PlanoDeEnsino" é a chamada ao construtor da classe. Esse construtor é o que cria o objeto propriamente dito, utilizando a memória alocada pelo operador "new".
 
 Ex2: Classe_pai classe = new Classe_filha();  
 Se a Classe filha herda da Classe pai, então há como declarar um objeto de subclasse usando uma referência de superclasse, mas não o contrário.
 
 ## Método construtor
-É um método especial responsável por criar o objeto da classe (instanciando a classe que foi definida), sendo chamado automaticamente quando o objeto é instanciado/criado.
-Ele é usado para inicializar os atributos da classe com valores específicos no momento da criação do objeto.  
-Um método construtor pode receber parâmetros e atribuir esses valores diretamente aos atributos da classe.  
-Exemplo:  
-public Padaria(String nome, String localizacao, int numeroFuncionarios)  
-{ ... }.
-    
+É um método especial chamado automaticamente quando o objeto é instanciado/criado.
+Ele é usado para inicializar os atributos da classe com valores. Ele deve possuir o mesmo nome da classe. Além disso, não retorna nenhum tipo de valor, e sim a intância do objeto (endereço da memória).  
+
 ## Encapsulamento
 É a forma como as CLASSES, MÉTODOs ou VARIÁVEIS podem ser vistos e utilizados por outras classes (e seus métodos/variáveis). Serve para proteger a integridade dos dados de uma classe, controlando o acesso a eles.  
 Utiliza-se os modificadores de acesso:
