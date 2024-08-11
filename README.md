@@ -23,10 +23,21 @@ data.dia = 05;  <-- variável de instância
 ## Métodos
 São declarações das classes que representam **ações** que a mesma pode executar em função dos valores de seus atributos.  
 
-## Objetos
+## Objetos e instâncias
 Objeto é uma entidade que pode ser física, conceitual ou de software. Ou seja, uma representação genérica.  
-instância é usada com o sentido de "exemplo". É a concretização da classe, são os objetos de fato criados a partir de uma classe e ocupando espaço na memória.  
-Ex: pode haver a classe cachorro, dando origem ao(s) objeto(s) cachorro(s), de forma genérica. A instância da classe, iria criar o "Totó","Rex" e "Bidu".
+Instância é usada com o sentido de "exemplo". É a concretização da classe, são as entidades de fato criadas a partir de uma classe e ocupando espaço na memória.  
+Ex: pode haver a classe cachorro que da origem a 3 objetos cachorros, de forma genérica. A instância da classe, iria criar o "Totó","Rex" e "Bidu".  
+
+|classe| |variável| = |new| |classe()|;   <-- instânciação de um obj.
+
+Ex1: PlanoDeEnsino plano1 = new PlanoDeEnsino();  
+
+1. O 1º"PlanoDeEnsino" é o tipo da variável. Aqui declaramos que "plano1" é uma variável que pode armazenar uma referência a um objeto do tipo "PlanoDeEnsino";  
+2."new" é o operador responsável por instanciar a classe. Ele aloca memória e ocupa fisicamente um endereço para criar efetivamente um novo objeto;  
+3.O 2º "PlanoDeEnsino" é a chamada ao construtor da classe. Esse construtor é o que cria o objeto propriamente dito, utilizando a memória alocada pelo operador "new".
+
+Ex2: Classe_pai classe = new Classe_filha();  
+Se a Classe filha herda da Classe pai, então há como declarar um objeto de subclasse usando uma referência de superclasse, mas não o contrário.
 
 ## Método construtor
 É um método especial responsável por criar o objeto da classe (instanciando a classe que foi definida), sendo chamado automaticamente quando o objeto é instanciado/criado.
@@ -123,19 +134,6 @@ Uma classe abstrata não pode ser instanciada (criação de um objeto) diretamen
 Na orientação a objetos uma interface é uma referência que determina uma série de requisitos que uma classe deva conter. As classes que implementam uma interface devem, obrigatoriamente, fornecer implementações para todos os métodos da interface. Uma interface é similar a uma classe abstrata, porém não permite a implementação de métodos, contendo apenas a especificação destes. 
 
 ## Outras informações úteis
-
-### Sobre a instacianção de um objeto:
-|classe| |variável| = |new| |classe()|;
-
-Ex1: PlanoDeEnsino plano1 = new PlanoDeEnsino();  
-
-1. O 1º"PlanoDeEnsino" é o tipo da variável. Aqui declaramos que "plano1" é uma variável que pode armazenar uma referência a um objeto do tipo "PlanoDeEnsino";  
-2."new" é o operador responsável por instanciar a classe. Ele aloca memória e ocupa fisicamente um endereço para criar efetivamente um novo objeto;  
-3.O 2º "PlanoDeEnsino" é a chamada ao construtor da classe. Esse construtor é o que cria o objeto propriamente dito, utilizando a memória alocada pelo operador "new".
-
-Ex2: Classe_pai classe = new Classe_filha();  
-Se a Classe filha herda da Classe pai, então há como declarar um objeto de subclasse usando uma referência de superclasse, mas não o contrário.
-
 
 ### Tipo "static"
 
