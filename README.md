@@ -14,17 +14,19 @@ Análise de uma situação do mundo real, decompondo-a nas partes mais fundament
 Abstração de objetos/entidades com características e comportamentos similares entre si.
 Servem como "modelos" para criar objetos, definindo a estrutra e o comportamento que os objetos compartilharão.
 Para isso, dispõe de atributos e métodos.
+    
+## Atributos
+São declarações das classesm (variáveis) que representam características de instância do objeto.  
+int dia;        <-- variável de classe  
+data.dia = 05;  <-- variável de instância  
+
+## Métodos
+São as ações que o objeto pode realizar.
 
 ## Objetos
 Objeto é uma entidade que pode ser física, conceitual ou de software. Ou seja, uma representação genérica.  
 instância é usada com o sentido de "exemplo". É a concretização da classe, são os objetos de fato criados a partir de uma classe e ocupando espaço na memória.  
 Ex: pode haver a classe cachorro, dando origem ao(s) objeto(s) cachorro(s), de forma genérica. A instância da classe, iria criar o "Totó","Rex" e "Bidu".
-    
-## Atributos
-São as características (variáveis) do objeto.
-
-## Métodos
-São as ações que o objeto pode realizar.
 
 ## Método construtor
 É um método especial responsável por criar o objeto da classe (instanciando a classe que foi definida), sendo chamado automaticamente quando o objeto é instanciado/criado.
