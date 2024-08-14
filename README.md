@@ -73,12 +73,12 @@ Exemplo: public void setNome(String nome) { this.nome = nome; }.
 Exemplo: public void getNome() { return = nome; }.
 
 ## Herança
-Esse conceito permite que uma classe (conhecida como classe filha/subclasse) herde (compartilhe) os atributos e métodos de outra classe (classe pai/superclasse).
+Esse conceito permite que uma classe (classe filha ou subclasse) herde (compartilhe) os atributos e métodos não privadods de outra classe (classe pai ou superclasse).
 - As classes situadas na hierarquia inferior da herança herdam atributos e métodos das classes acima.
 - Método super():acessa o método construtor da classe que está imediatamente acima na hierarquia da Herança.
 
 ## Polimorfismo
-O Polimorfismo (poli = muitas, morphos = formas), ou sobrescrita, é o conceito no qual classes derivadas de uma mesma superclasse fornecem implementações (comportamentos) específicas de um método que já está sendo usado pela classe pai.  
+O Polimorfismo (poli = muitas, morphos = formas), ou sobrescrita, é o conceito no qual subclasses de uma mesma superclasse implemantam comportamentos específicos de um método que já está sendo usado pela classe pai.  
 Cada um desses métodos derivados têm a mesma identificação (assinatura/nome), mas funcionamentos diferentes, e usam como referência o tipo do método da superclasse.  
 Isso permite que objetos de diferentes classes respondam de maneira diferente a uma mesma CHAMADA de método.  
 Em outras palavras, um mesmo método pode apresentar várias formas, de acordo com seu contexto; é a modificação do comportamento de um método existente da classe modelo.  
