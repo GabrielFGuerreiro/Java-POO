@@ -78,13 +78,14 @@ Esse conceito permite que uma classe (classe filha ou subclasse) herde (comparti
 - Método super():acessa o método construtor da classe que está imediatamente acima na hierarquia da Herança.
 
 ## Polimorfismo
-O Polimorfismo (poli = muitas, morphos = formas), ou sobrescrita, é o conceito no qual subclasses de uma mesma superclasse implemantam comportamentos específicos de um método que já está sendo usado pela classe pai.  
-Cada um desses métodos derivados têm a mesma identificação (assinatura/nome), mas funcionamentos diferentes, e usam como referência o tipo do método da superclasse.  
-Isso permite que objetos de diferentes classes respondam de maneira diferente a uma mesma CHAMADA de método.  
-Em outras palavras, um mesmo método pode apresentar várias formas, de acordo com seu contexto; é a modificação do comportamento de um método existente da classe modelo.  
+O Polimorfismo (poli = muitas, morphos = formas) permite que um método tenha diferentes implementações dependendo da classe do objeto que o chama. É um conceito geral que engloba tanto a sobrescrita quanto a sobrecarga.  
+Em outras palavras, objetos de diferentes classes podem responder de maneira diferente à uma mesma chamada de método.  
 
-O polimorfismo torna o código mais flexível, modular e fácil de entender e dar manutenção, pois permite que o comportamento dos objetos seja determinado em tempo de execução, dependendo do tipo do objeto.
-Isso promove a reutilização de código e a abstração, que são princípios fundamentais na programação orientada a objetos.  
+O polimorfismo torna o código mais flexível, modular e fácil de entender e manter (manutenção), pois permite que o comportamento dos objetos seja determinado em tempo de execução, com base no tipo do objeto. Isso promove a reutilização de código e a abstração, princípios fundamentais na programação orientada a objetos.  
+
+## Sobrescrita
+O Override o conceito pelo qual subclasses fornecem implementações específicas de um método que já existe na superclasse.  
+Os métodos sobrescritos na subclasse têm o mesmo nome e assinatura do método na superclasse, mas funcionamentos diferentes. A escolha do método a ser executado é baseada no tipo do objeto em tempo de execução.  
 
 public class Animal  
 {    
@@ -110,19 +111,16 @@ public class Main
         Animal animal1 = new Cachorro();  
         Animal animal2 = new Gato();   
             
-        animal1.fazerSom(); //"Au au!"   
-        animal2.fazerSom(); //"Miau!"  
+        animal1.fazerSom(); //"Au au!"  - Determinado em tempo de execução  
+        animal2.fazerSom(); //"Miau!"   - Determinado em tempo de execução  
     }  
 }  
 
-## Bibliotecas AWT e Swing<
-AWT (Abstract Window Toolkit) é uma biblioteca gráfica em Java que fornece classes e métodos para criar interfaces gráficas de usuário (GUI), como  como janelas, botões, caixas de texto, menus, etc, em aplicativos Java. Como limitação, ela pode ter uma aparência e comportamento diferentes em diferentes sistemas operacionais.  
-Outras bibliotecas gráficas, como Swing e JavaFX, foram construídas em cima da AWT, estendendo suas funcionalidades e superando algumas de suas limitações.
-A biblioteca swing fornece um conjunto mais avançado de componentes de interface gráfica de usuário (GUI) em comparação com o pacote java.awt. Ele fornece componentes gráficos mais avançados e flexíveis, barras de rolagem, tabelas, painéis, entre outros. Além disso, ele oferece suporte a recursos adicionais, como layout gerenciado pelo sistema, suporte a ícones, diálogos modais, entre outros.
-
 ## Sobrecarga
-A sobrecarga (overloading) em Java é uma característica que permite a criação de vários métodos com o mesmo nome, mas com diferentes listas de parâmetros (assinaturas). Isso significa que você pode definir várias versões de um método na mesma classe (ou em uma classe que a herda), desde que cada versão tenha um conjunto distinto de parâmetros (com base na quantidade, nos tipos e na ordem de parâmetros). Neste exemplo, o método soma é sobrecarregado três vezes com diferentes assinaturas:  
-    
+O Overload em Java é uma característica que permite a criação de vários métodos com o mesmo nome, mas com diferentes listas de parâmetros (assinaturas) dentro da mesma classe. Isso significa que você pode definir várias versões de um método, desde que cada versão tenha um conjunto distinto de parâmetros (quantidade, tipos e ordem dos parâmetros). A escolha do método a ser chamado é feita em tempo de compilação.  
+
+Neste exemplo, o método soma é sobrecarregado três vezes com diferentes assinaturas:  
+
 public class Calculadora {  
     // Método para somar dois inteiros  
     public int soma(int a, int b) { return a + b; }  
@@ -134,8 +132,21 @@ public class Calculadora {
     public double soma(double a, double b) { return a + b; }  
 }  
 
+public class Main {  
+    public static void main(String[] args) {  
+        Calculadora calc = new Calculadora();  
+        int resultado = calc.soma(2, 3);  // O compilador escolhe soma(int a, int b)  
+    }  
+}  
+
 ## Classe abstrata
 Uma classe abstrata não pode ser instanciada (criação de um objeto) diretamente e é utilizada como uma classe-base (modelo) para outras classes. Ela pode conter métodos abstratos, que são métodos declarados sem implementação (sem corpo). Esses métodos precisam, obrigatoriamente, ser implementados pelas classes que herdam a classe abstrata. Além disso, uma classe abstrata pode conter métodos concretos, que possuem implementação, bem como variáveis e construtores.
 
 ## Interface
 Na orientação a objetos uma interface é uma referência que determina uma série de requisitos que uma classe deva conter. As classes que implementam uma interface devem, obrigatoriamente, fornecer implementações para todos os métodos da interface. Uma interface é similar a uma classe abstrata, porém não permite a implementação de métodos, contendo apenas a especificação destes. 
+
+## Bibliotecas AWT e Swing<
+AWT (Abstract Window Toolkit) é uma biblioteca gráfica em Java que fornece classes e métodos para criar interfaces gráficas de usuário (GUI), como  como janelas, botões, caixas de texto, menus, etc, em aplicativos Java. Como limitação, ela pode ter uma aparência e comportamento diferentes em diferentes sistemas operacionais.  
+Outras bibliotecas gráficas, como Swing e JavaFX, foram construídas em cima da AWT, estendendo suas funcionalidades e superando algumas de suas limitações.
+A biblioteca swing fornece um conjunto mais avançado de componentes de interface gráfica de usuário (GUI) em comparação com o pacote java.awt. Ele fornece componentes gráficos mais avançados e flexíveis, barras de rolagem, tabelas, painéis, entre outros. Além disso, ele oferece suporte a recursos adicionais, como layout gerenciado pelo sistema, suporte a ícones, diálogos modais, entre outros.
+
