@@ -2,7 +2,7 @@ package business;
 
 abstract public class Calculo implements ICalculo
 {
-    float valor1, valor2, resultado;
+    protected float valor1, valor2, resultado;
 
     public float getValor1 () {return valor1;}
     public void setValor1 (float valor1) {this.valor1 = valor1;}

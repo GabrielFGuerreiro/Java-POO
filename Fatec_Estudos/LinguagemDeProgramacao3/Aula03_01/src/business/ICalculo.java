@@ -1,6 +1,6 @@
 package business;
 
-interface ICalculo
+public interface ICalculo
 {
     void calcular(); 
 }
