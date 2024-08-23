@@ -77,6 +77,44 @@ Esse conceito permite que uma classe (classe filha ou subclasse) herde (comparti
 - As classes situadas na hierarquia inferior da herança herdam atributos e métodos das classes acima.
 - Método super():acessa o método construtor da classe que está imediatamente acima na hierarquia da Herança.
 
+### Upcasting
+Upcasting ocorre quando você usa uma instância de uma subclasse e a trata como uma instância de sua superclasse. Ou seja, você "sobe" na hierarquia (de subclasse para superclasse), assim, você pode acessar apenas métodos da superclasse.  
+Esse processo é feito automaticamente pelo compilador e seguro porque qualquer objeto da subclasse é também um objeto da superclasse.  
+
+class Animal {  
+    void fazerSom() {  
+        System.out.println("Som de animal");  
+    }  
+}  
+
+class Cachorro extends Animal {  
+    void latir() {  
+        System.out.println("Au Au");  
+    }  
+}  
+
+public class Teste {  
+    public static void main(String[] args) {  
+        Cachorro cachorro = new Cachorro(); // Instancia um objeto Cachorro  
+        Animal animal = cachorro; // Upcasting  
+        animal.fazerSom(); // Chama o método da superclasse  
+    }  
+}  
+
+### Downcasting
+Downcasting ocorre quando você converte um objeto de uma superclasse para uma subclasse. Ou seja, você "desce" na hierarquia (de superclasse para subclasse) para acessar métodos e atributos específicos da subclasse.  
+Esse processo é explícito e pode falhar se o objeto não for realmente uma instância da subclasse especificada.  
+
+public class Teste {  
+    public static void main(String[] args) {  
+        Animal animal = new Cachorro(); // Upcasting  
+        if (animal instanceof Cachorro) {  
+            Cachorro cachorro = (Cachorro) animal; // Downcasting  
+            cachorro.latir(); // Chama o método da subclasse  
+        }  
+    }  
+}  
+
 ## Polimorfismo
 O Polimorfismo (poli = muitas, morphos = formas) permite que um método tenha diferentes implementações dependendo da classe do objeto que o chama. É um conceito geral que engloba tanto a sobrescrita quanto a sobrecarga.  
 Em outras palavras, objetos de diferentes classes podem responder de maneira diferente à uma mesma chamada de método.  
@@ -145,7 +183,7 @@ Uma classe abstrata não pode ser instanciada  diretamente (criação de um obje
 ## Interface
 Na orientação a objetos uma interface é uma referência que determina uma série de requisitos que uma classe deva conter. As classes que implementam uma interface devem, obrigatoriamente, fornecer implementações para todos os métodos da interface. Uma interface é similar a uma classe abstrata, porém não permite a implementação de métodos, contendo apenas a especificação destes. 
 
-## Bibliotecas AWT e Swing<
+## Bibliotecas AWT e Swing
 AWT (Abstract Window Toolkit) é uma biblioteca gráfica em Java que fornece classes e métodos para criar interfaces gráficas de usuário (GUI), como  como janelas, botões, caixas de texto, menus, etc, em aplicativos Java. Como limitação, ela pode ter uma aparência e comportamento diferentes em diferentes sistemas operacionais.  
 Outras bibliotecas gráficas, como Swing e JavaFX, foram construídas em cima da AWT, estendendo suas funcionalidades e superando algumas de suas limitações.
 A biblioteca swing fornece um conjunto mais avançado de componentes de interface gráfica de usuário (GUI) em comparação com o pacote java.awt. Ele fornece componentes gráficos mais avançados e flexíveis, barras de rolagem, tabelas, painéis, entre outros. Além disso, ele oferece suporte a recursos adicionais, como layout gerenciado pelo sistema, suporte a ícones, diálogos modais, entre outros.
