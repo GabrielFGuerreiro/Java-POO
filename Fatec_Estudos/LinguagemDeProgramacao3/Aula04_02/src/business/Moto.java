@@ -4,11 +4,13 @@ public class Moto extends Veiculo
 {
     private boolean descansoAcionado = true;
     private Motor motor;
+    private Manutencao manutencao;
 
-    public Moto(String modelo, String fabricante, int ano, Motor motor)
+    public Moto(String modelo, String fabricante, int ano, Motor motor, Manutencao manutencao)
     {
         super(modelo, fabricante, ano);
         this.motor = motor;
+        this.manutencao = manutencao; 
     }
 
     @Override
@@ -35,6 +37,6 @@ public class Moto extends Veiculo
     @Override
     public String mostraVelocidade()
     {
-        return String.format("Velocidade atual: %d\nDescanso acionado: %s\n%s", velocidadeAtual, descansoAcionado, motor.toString());
+        return String.format("Velocidade atual: %d\nDescanso acionado: %s\n%s\n%s", velocidadeAtual, descansoAcionado, motor.toString(), manutencao.toString());
     }    
 }
