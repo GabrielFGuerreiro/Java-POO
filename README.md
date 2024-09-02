@@ -186,6 +186,16 @@ Na orientação a objetos uma interface é uma referência que determina uma sé
 ## Associação
 Associação é uma relação entre duas classes que permite que uma instância de uma classe se comunique com uma instância de outra classe. Esse vínculo possibilita que um objeto acesse métodos e atributos de outro objeto, permitindo a troca de informações e o uso de funcionalidades entre eles.
 
+### Agregação
+Um tipo especial de associação que representa um relacionamento "todo/parte". Em uma agregação, as partes (objetos) podem existir independentemente do todo. Por exemplo, uma classe Departamento pode ter vários objetos Funcionario, mas se o Departamento for eliminado, os Funcionario podem continuar a existir.  
+
+package RegraNegocio;  
+public class Aula{  
+private Alunos _alunos;  
+private Materia _materia;  
+}  
+Nesse exemplos, uma aula pode ocorre sem alunos e os alunos existem, de forma própria, sem a aula.
+
 ## Bibliotecas AWT e Swing
 AWT (Abstract Window Toolkit) é uma biblioteca gráfica em Java que fornece classes e métodos para criar interfaces gráficas de usuário (GUI), como  como janelas, botões, caixas de texto, menus, etc, em aplicativos Java. Como limitação, ela pode ter uma aparência e comportamento diferentes em diferentes sistemas operacionais.  
 Outras bibliotecas gráficas, como Swing e JavaFX, foram construídas em cima da AWT, estendendo suas funcionalidades e superando algumas de suas limitações.
