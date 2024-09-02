@@ -3,10 +3,12 @@ package business;
 public class Moto extends Veiculo
 {
     private boolean descansoAcionado = true;
+    private Motor motor;
 
-    public Moto(String modelo, String fabricante, int ano)
+    public Moto(String modelo, String fabricante, int ano, Motor motor)
     {
         super(modelo, fabricante, ano);
+        this.motor = motor;
     }
 
     @Override
@@ -33,7 +35,6 @@ public class Moto extends Veiculo
     @Override
     public String mostraVelocidade()
     {
-        return String.format("Velocidade atual: %d\nDescanso acionado: %s", velocidadeAtual, descansoAcionado);
-    }
-    
+        return String.format("Velocidade atual: %d\nDescanso acionado: %s\n%s", velocidadeAtual, descansoAcionado, motor.toString());
+    }    
 }

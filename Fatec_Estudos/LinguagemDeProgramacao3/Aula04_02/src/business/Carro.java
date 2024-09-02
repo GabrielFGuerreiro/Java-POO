@@ -3,11 +3,13 @@ package business;
 public class Carro extends Veiculo
 {
     private int quantidadePortas;
+    private Motor motor;
 
-    public Carro(String modelo, String fabricante, int ano)
+    public Carro(String modelo, String fabricante, int ano, Motor motor)
     {
         super(modelo, fabricante, ano);
-        quantidadePortas = 4;
+        this.motor = motor;
+        this.quantidadePortas = 4;
     }
 
     @Override
@@ -33,6 +35,6 @@ public class Carro extends Veiculo
     @Override
     public String mostraVelocidade()
     {
-        return String.format("Velocidade atual: %dkm/h\nQuantidade de portas: %d", velocidadeAtual, quantidadePortas);
+        return String.format("Velocidade atual: %dkm/h\nQuantidade de portas: %d\n%s", velocidadeAtual, quantidadePortas, motor.toString());
     }
 }

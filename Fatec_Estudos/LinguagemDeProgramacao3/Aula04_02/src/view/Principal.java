@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import business.Veiculo;
 import business.Carro;
 import business.Moto;
+import business.Motor;
 
 public class Principal
 {
@@ -23,17 +24,18 @@ public class Principal
         }
 
         Veiculo veiculo = null;
+        Motor motor = new Motor(150, "Flex");
 
         switch(op)
         {
-            case "m":
-            case "M":
-                veiculo = new Moto("modelo1", "fabricante1", 2017);
+            case "c":
+            case "C":                                         //Leva o objeto motor (e seus valores)
+                veiculo = new Carro("Civic", "Honda", 2021, motor);
                 break;
 
-            case "c":
-            case "C":
-                veiculo = new Carro("modelo2", "fabricante2", 2019);
+            case "m":
+            case "M":                                         //Leva o objeto motor (e seus valores)
+                veiculo = new Moto("Ninja 300", "Kawasaki", 2023, motor);
                 break;
             
             default:
