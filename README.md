@@ -183,6 +183,9 @@ Uma classe abstrata não pode ser instanciada  diretamente (criação de um obje
 ## Interface
 Na orientação a objetos uma interface é uma referência que determina uma série de requisitos que uma classe deva conter. As classes que implementam uma interface devem, obrigatoriamente, fornecer implementações para todos os métodos da interface. Uma interface é similar a uma classe abstrata, porém não permite a implementação de métodos, contendo apenas a especificação destes. 
 
+## Associação
+Associação é uma relação entre duas classes que permite que uma instância de uma classe se comunique com uma instância de outra classe. Esse vínculo possibilita que um objeto acesse métodos e atributos de outro objeto, permitindo a troca de informações e o uso de funcionalidades entre eles.
+
 ## Bibliotecas AWT e Swing
 AWT (Abstract Window Toolkit) é uma biblioteca gráfica em Java que fornece classes e métodos para criar interfaces gráficas de usuário (GUI), como  como janelas, botões, caixas de texto, menus, etc, em aplicativos Java. Como limitação, ela pode ter uma aparência e comportamento diferentes em diferentes sistemas operacionais.  
 Outras bibliotecas gráficas, como Swing e JavaFX, foram construídas em cima da AWT, estendendo suas funcionalidades e superando algumas de suas limitações.
