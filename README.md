@@ -196,6 +196,17 @@ private Materia _materia;
 }  
 Nesse exemplos, uma aula pode ocorre sem alunos e os alunos existem, de forma própria, sem a aula.
 
+### Composição
+Uma forma mais forte de agregação. Na composição, o "todo" é responsável pela criação e destruição de suas partes, ou seja, se o objeto "todo" for destruído, todos os objetos "parte" também são destruídos. Um exemplo seria uma classe Casa que tem várias Paredes. Se a Casa for destruída, as Paredes também serão.  
+
+package RegraNegocio;  
+public class Carro {  
+private Chassi _chassi;  
+private Motor _motor;  
+}  
+
+Nesse exemplos, um carro não pode existir sem um motor e um chassi, e um motor/chassi sozinho não tem utilidade.
+
 ## Bibliotecas AWT e Swing
 AWT (Abstract Window Toolkit) é uma biblioteca gráfica em Java que fornece classes e métodos para criar interfaces gráficas de usuário (GUI), como  como janelas, botões, caixas de texto, menus, etc, em aplicativos Java. Como limitação, ela pode ter uma aparência e comportamento diferentes em diferentes sistemas operacionais.  
 Outras bibliotecas gráficas, como Swing e JavaFX, foram construídas em cima da AWT, estendendo suas funcionalidades e superando algumas de suas limitações.
