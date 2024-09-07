@@ -52,7 +52,9 @@ Utiliza-se os modificadores de acesso:
 - private: acessível apenas para a classe em que este atributo se encontra;  
 - package-private: é o modificador padrão quando outro não é definido. Similar ao protected, porém não deixa acessível fora do pacote, nem por subclasses;  
 - final: modificador que, aplicado a uma variável, a torna uma constante; aplicado a um método, impede que ele seja sobrescrito; aplicado a uma classe, impede que ela seja estendida;  
-- static: esse membro é compartilhado entre todas as instâncias da classe. Ou seja, você pode acessar o membro static diretamente pela classe, sem precisar criar uma instância. Uma classe bola possui uma variável "static String forma = "redonda" " que é compartilhada entre todas as instâncias(objetos) dessa classe, então todas as instâncias (diferentes instâncias/bolas) terão a mesma variável com o mesmo valor. Além disso, um membro (várivel/método) do tipo static vai para memória (é instanciado ) no momento de execução, rodando até o término do programa.  Ex:  
+- static: indica que um membro (variável ou método) pertence à classe  e não a instâncias específicas dessa classe Isso significa que você pode acessar um membro static diretamente pela classe, sem precisar criar um objeto. As variáveis estáticas/de classe têm seus valores compartilhados entre todas as instâncias da classe.  
+Por exemplo, se a classe Bola tiver uma variável **static String forma = "redonda"**, essa variável será compartilhada entre todas as instâncias da classe, ou seja, todas as bolas terão a mesma forma. Não importa quantas instâncias da classe Bola sejam criadas, a variável static será única e acessível a todas elas.  
+Além disso, métodos ou variáveis marcados como static são carregados na memória (instância) logo quando a classe é carregada, e permanecem até o término da execução do programa.  Ex:  
 
 class ClasseEx {  
     static int contador = 0;  
