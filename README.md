@@ -210,7 +210,21 @@ private Motor _motor;
 Nesse exemplos, um carro não pode existir sem um motor e um chassi, e um motor/chassi sozinho não tem utilidade.
 
 ## Bibliotecas AWT e Swing
-AWT (Abstract Window Toolkit) é uma biblioteca gráfica em Java que fornece classes e métodos para criar interfaces gráficas de usuário (GUI), como  como janelas, botões, caixas de texto, menus, etc, em aplicativos Java. Como limitação, ela pode ter uma aparência e comportamento diferentes em diferentes sistemas operacionais.  
-Outras bibliotecas gráficas, como Swing e JavaFX, foram construídas em cima da AWT, estendendo suas funcionalidades e superando algumas de suas limitações.
-A biblioteca swing fornece um conjunto mais avançado de componentes de interface gráfica de usuário (GUI) em comparação com o pacote java.awt. Ele fornece componentes gráficos mais avançados e flexíveis, barras de rolagem, tabelas, painéis, entre outros. Além disso, ele oferece suporte a recursos adicionais, como layout gerenciado pelo sistema, suporte a ícones, diálogos modais, entre outros.
+Sua descrição está bastante clara e informativa! Apenas fiz alguns ajustes para melhorar a fluidez e corrigir alguns detalhes. Veja abaixo a versão revisada:
 
+AWT (Abstract Window Toolkit) é uma biblioteca gráfica em Java que fornece classes e métodos para criar interfaces gráficas de usuário (GUI), como janelas, botões, caixas de texto e menus, em aplicativos Java. No entanto, uma limitação da AWT é que ela pode ter uma aparência e comportamento diferentes em diferentes sistemas operacionais.  
+
+Outras bibliotecas gráficas, como Swing e JavaFX, foram desenvolvidas para superar essas limitações. Elas são construídas sobre a AWT e oferecem funcionalidades adicionais, permitindo uma aparência uniforme independentemente da plataforma.  
+
+Swing, por exemplo, fornece um conjunto mais avançado de componentes de GUI em comparação com o pacote java.awt. Ele inclui componentes gráficos mais sofisticados e flexíveis, como barras de rolagem, tabelas e painéis. Além disso, oferece suporte a recursos adicionais, como layout gerenciado pelo sistema, suporte a ícones e diálogos modais.  
+
+Alguns dos principais componentes do Swing:  
+▪ JFrame: Um contêiner (formulário) para outros componentes;  
+▪ JLabel: Um elemento para exibição de texto não editável ou imagens;  
+▪ JTextField: Um elemento para receber dados do usuário via teclado;  
+▪ JButton: Um componente que aciona um evento ao ser clicado pelo usuário;  
+▪ JComboBox: Uma lista de itens com valores pré-definidos para seleção;  
+▪ JCheckBox: Um componente com dois estados: selecionado ou não selecionado;  
+▪ JRadioButton: Um botão de escolha que pode ser agrupado com outros, permitindo que apenas um elemento seja escolhido;  
+▪ JList: Uma área onde uma lista é exibida, permitindo seleção;  
+▪ JPanel: Um contêiner onde outros componentes podem ser colocados.    
