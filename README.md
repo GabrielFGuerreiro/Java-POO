@@ -219,12 +219,12 @@ Swing, por exemplo, fornece um conjunto mais avançado de componentes de GUI em 
 A classe JComponent é a superclasse de todos os componentes Swing. Objetos como JButton, JCheckBox e JTextField são exemplos de objetos das subclasses de JComponent. A classe JComponent é uma subclasse direta de java.awt.Container, que, por sua vez, é uma subclasse direta de java.awt.Component.
 
 Alguns dos principais componentes do Swing:  
-▪ JFrame: Um contêiner (formulário) para outros componentes;  
-▪ JLabel: Um elemento para exibição de texto não editável ou imagens;  
-▪ JTextField: Um elemento para receber dados do usuário via teclado;  
+▪ JFrame: Um contêiner (formulário/janela) para outros componentes. É usado como a janela principal de uma aplicação;  
+▪ JLabel: Um elemento para exibição de texto não editável ou imagens, sem interatividade com o usuário;  
+▪ JTextField: Um elemento para receber dados (uma linha de texto) do usuário via teclado;  
 ▪ JButton: Um componente que aciona um evento ao ser clicado pelo usuário;  
-▪ JComboBox: Uma lista de itens com valores pré-definidos para seleção;  
+▪ JComboBox: Uma lista de itens com valores pré-definidos para seleção do usuário;  
 ▪ JCheckBox: Um componente com dois estados: selecionado ou não selecionado;  
 ▪ JRadioButton: Um botão de escolha que pode ser agrupado com outros, permitindo que apenas um elemento seja escolhido;  
-▪ JList: Uma área onde uma lista é exibida, permitindo seleção;  
+▪ JList: Uma área onde uma lista é exibida, permitindo seleção de um ou mais itens;  
 ▪ JPanel: Um contêiner onde outros componentes podem ser colocados. 
