@@ -124,8 +124,26 @@ public class Formulario
 			{
                 String operacao = "+";
                 if(!txtNumero.getText().isEmpty())
-                    mexeSaldo(Integer.parseInt(txtNumero.getText()), operacao);
-                else
+                    mexeSaldo(Integer.parseInt(txtNumero.getText()), operacao); //Se o número NÂO estiver vazio, chama o método mexeSaldo, leavndo o número da conta e a operaçao
+                else //Se estiver vazio, dá erro
+                    JOptionPane.showMessageDialog(form,"Digite o número da conta", "ERRO", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+
+        //Botão Saque
+        btnSacar = new JButton("SACAR");
+        btnSacar.setBounds(250, 220, 130, 50);
+        btnSacar.setBackground(Color.decode("#ff0000"));
+        btnSacar.setForeground(Color.white);
+        btnSacar.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+                String operacao = "-";
+                if(!txtNumero.getText().isEmpty())
+                    mexeSaldo(Integer.parseInt(txtNumero.getText()), operacao); //Se o número NÂO estiver vazio, chama o método mexeSaldo, leavndo o número da conta e a operaçao
+                else //Se estiver vazio, dá erro
                     JOptionPane.showMessageDialog(form,"Digite o número da conta", "ERRO", JOptionPane.ERROR_MESSAGE);
 			}
 		});
@@ -133,6 +151,7 @@ public class Formulario
         painelDeConteudo.add(btnCadastrar);
         painelDeConteudo.add(btnMostraInfos);
         painelDeConteudo.add(btnDepositar);
+        painelDeConteudo.add(btnSacar);
         form.setVisible(true);
     }
 
@@ -152,6 +171,7 @@ public class Formulario
                 return; //O return interrompe o método após achar o cliente correspondente
             }
         }
+        //Sai do for se não encontrar o cliente
         JOptionPane.showMessageDialog(form, "Cliente não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
     }
 
@@ -161,13 +181,24 @@ public class Formulario
         for (Cliente cliente : clientes)
         {
             Conta conta = cliente.getConta();
-            if(conta.getNumero() == numeroConta) //Outra forma: cliente.getConta().getNumero()
+            if(conta.getNumero() == numeroConta && operacao.equals("+")) //Outra forma: cliente.getConta().getNumero()  //Depósito
             {
                 String valor = JOptionPane.showInputDialog(form, "Qual valor deseja depositar?","Depósito", JOptionPane.DEFAULT_OPTION);
                 conta.deposito(Integer.parseInt(valor));
+                JOptionPane.showMessageDialog(form, "Depósito realizado com sucesso!");
+
+                return;  //O return interrompe o método após achar o número correspondente
+            }
+            else if(conta.getNumero() == numeroConta && operacao.equals("-")) //Outra forma: cliente.getConta().getNumero()  //Saque
+            {
+                String valor = JOptionPane.showInputDialog(form, "Qual valor deseja sacar?","Saque", JOptionPane.DEFAULT_OPTION);
+                conta.saque(Integer.parseInt(valor));
+                JOptionPane.showMessageDialog(form, "Saque realizado com sucesso!");
+
                 return;  //O return interrompe o método após achar o número correspondente
             }
         }      
+        //Sai do for se não encontrar o número
         JOptionPane.showMessageDialog(form, "Número de conta não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
     }
 }
