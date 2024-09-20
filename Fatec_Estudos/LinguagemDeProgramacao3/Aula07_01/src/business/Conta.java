@@ -21,4 +21,9 @@ public class Conta
     {
         return saldo = saldo + valor;
     }
+
+    public float saque(float valor)
+    {
+        return saldo = saldo - valor;
+    }
 }
