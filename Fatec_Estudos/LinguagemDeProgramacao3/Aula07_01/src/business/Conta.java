@@ -2,17 +2,23 @@ package business;
 
 public class Conta
 {
-    private int numero, saldo;
+    private int numero;
+    private float saldo;
     
-    public Conta(int numero, int saldo)
+    public Conta(int numero, float saldo)
     {
         this.numero = numero;
         this.saldo = saldo;
     }
     
     public int getNumero() {return numero;}
-    public int getSaldo() {return saldo;}
+    public float getSaldo() {return saldo;}
 
     public void setNumero(int numero) {this.numero = numero;}
     public void setSaldo(int saldo) {this.saldo = saldo;}
+
+    public float deposito(float valor)
+    {
+        return saldo = saldo + valor;
+    }
 }
