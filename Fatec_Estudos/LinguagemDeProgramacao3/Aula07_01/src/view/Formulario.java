@@ -97,12 +97,40 @@ public class Formulario
 			}
 		});
 
-        
+        //Botão Informações
+        btnMostraInfos = new JButton("INFORMAÇÕES");
+        btnMostraInfos.setBounds(250, 150, 130, 50);
+        btnMostraInfos.setBackground(Color.decode("#00bfff"));
+        btnMostraInfos.setForeground(Color.white);
+        btnMostraInfos.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+                
+                mostraClientes(txtNome.getText());
+			}
+		});
 
         painelDeConteudo.add(btnCadastrar);
- 
+        painelDeConteudo.add(btnMostraInfos);
         form.setVisible(true);
     }
 
-    
+    public void mostraClientes(String nomePesquisado)
+    {
+        for (Cliente cliente : clientes)
+        {   
+            Conta conta = cliente.getConta(); //Conta associada ao cliente
+                                    //M = m
+            if(cliente.getNome().equalsIgnoreCase(nomePesquisado))
+            {
+                JOptionPane.showMessageDialog(form, "Nome: " + cliente.getNome() + "\nCPF: " + cliente.getCPF() +
+                "\nNúmero da conta: " + conta.getNumero() + "\nSaldo: " + conta.getSaldo(), 
+                "Informações do Cliente", JOptionPane.INFORMATION_MESSAGE);
+                return; //Sai do for caso não ache o nome do cliente
+            }
+        }
+        JOptionPane.showMessageDialog(form, "Cliente não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
 }
