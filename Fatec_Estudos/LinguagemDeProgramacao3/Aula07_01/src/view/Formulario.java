@@ -72,7 +72,35 @@ public class Formulario
         txtNumero.setBounds(350, 80, 100, 30);
 		painelDeConteudo.add(txtNumero);
 
+        //Botão cadastrar
+        btnCadastrar = new JButton("CADASTRAR");
+        btnCadastrar.setBounds(100, 150, 130, 50);
+        btnCadastrar.setBackground(Color.decode("#008000"));
+        btnCadastrar.setForeground(Color.white);
+        btnCadastrar.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{             
+                if (!txtNome.getText().isEmpty() && !txtCPF.getText().isEmpty() && !txtNumero.getText().isEmpty())
+                {
+                    Conta conta = new Conta(Integer.parseInt(txtNumero.getText()), Integer.parseInt(txtSaldo.getText())); //Objeto conta
+                    novoCliente = new Cliente(txtNome.getText(), txtCPF.getText(), conta); //Objeto cliente. Associação de cliente e conta
+                    clientes.add(novoCliente); //Lista(objeto)
+                    JOptionPane.showMessageDialog(form, "Cliente cadastrado com sucesso!");
+                    txtNome.setText("");
+                    txtCPF.setText("");
+                    txtNumero.setText("");
+                    txtSaldo.setText("");
+                } else
+                    JOptionPane.showMessageDialog(form, "Por favor, preencha todos os campos.");
+			}
+		});
+
         
+
+        painelDeConteudo.add(btnCadastrar);
+ 
         form.setVisible(true);
     }
 
