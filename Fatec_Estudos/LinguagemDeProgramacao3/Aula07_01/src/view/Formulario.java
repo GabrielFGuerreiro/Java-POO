@@ -19,7 +19,7 @@ public class Formulario
     private JFrame form;
 	private JLabel lblNome, lblCPF, lblSaldo, lblnumero;
 	private JTextField txtNome, txtCPF, txtSaldo, txtMexeSaldo, txtNumero;
-	private JButton btnCadastrar, btnMostraInfos;
+	private JButton btnCadastrar, btnMostraInfos, btnDepositar, btnSacar;
     private ArrayList<Cliente> clientes; //Lista cliente
     Cliente novoCliente;
 
@@ -75,7 +75,7 @@ public class Formulario
         //Botão cadastrar
         btnCadastrar = new JButton("CADASTRAR");
         btnCadastrar.setBounds(100, 150, 130, 50);
-        btnCadastrar.setBackground(Color.decode("#008000"));
+        btnCadastrar.setBackground(Color.decode("#00bfff"));
         btnCadastrar.setForeground(Color.white);
         btnCadastrar.addActionListener(new ActionListener()
 		{
@@ -84,7 +84,7 @@ public class Formulario
 			{             
                 if (!txtNome.getText().isEmpty() && !txtCPF.getText().isEmpty() && !txtNumero.getText().isEmpty())
                 {
-                    Conta conta = new Conta(Integer.parseInt(txtNumero.getText()), Integer.parseInt(txtSaldo.getText())); //Objeto conta
+                    Conta conta = new Conta(Integer.parseInt(txtNumero.getText()), Float.parseFloat(txtSaldo.getText())); //Objeto conta
                     novoCliente = new Cliente(txtNome.getText(), txtCPF.getText(), conta); //Objeto cliente. Associação de cliente e conta
                     clientes.add(novoCliente); //Lista(objeto)
                     JOptionPane.showMessageDialog(form, "Cliente cadastrado com sucesso!");
@@ -98,9 +98,9 @@ public class Formulario
 		});
 
         //Botão Informações
-        btnMostraInfos = new JButton("INFORMAÇÕES");
+        btnMostraInfos = new JButton("PESQUISAR");
         btnMostraInfos.setBounds(250, 150, 130, 50);
-        btnMostraInfos.setBackground(Color.decode("#00bfff"));
+        btnMostraInfos.setBackground(Color.decode("#ffff00"));
         btnMostraInfos.setForeground(Color.white);
         btnMostraInfos.addActionListener(new ActionListener()
 		{
@@ -111,26 +111,63 @@ public class Formulario
                 mostraClientes(txtNome.getText());
 			}
 		});
+        
+        //Botão Depositar
+        btnDepositar = new JButton("DEPOSITAR");
+        btnDepositar.setBounds(100, 220, 130, 50);
+        btnDepositar.setBackground(Color.decode("#008000"));
+        btnDepositar.setForeground(Color.white);
+        btnDepositar.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+                String operacao = "+";
+                if(!txtNumero.getText().isEmpty())
+                    mexeSaldo(Integer.parseInt(txtNumero.getText()), operacao);
+                else
+                    JOptionPane.showMessageDialog(form,"Digite o número da conta", "ERRO", JOptionPane.ERROR_MESSAGE);
+			}
+		});
 
         painelDeConteudo.add(btnCadastrar);
         painelDeConteudo.add(btnMostraInfos);
+        painelDeConteudo.add(btnDepositar);
         form.setVisible(true);
     }
 
+    //Método mostra cliente
     public void mostraClientes(String nomePesquisado)
     {
-        for (Cliente cliente : clientes)
+        for(Cliente cliente : clientes)
         {   
-            Conta conta = cliente.getConta(); //Conta associada ao cliente
+            Conta conta = cliente.getConta(); //Conta associada ao cliente pelo método getConta.
+            //É uma simplificação de código, poderia usar o cliente.getConta() ao invés.
                                     //M = m
             if(cliente.getNome().equalsIgnoreCase(nomePesquisado))
             {
                 JOptionPane.showMessageDialog(form, "Nome: " + cliente.getNome() + "\nCPF: " + cliente.getCPF() +
-                "\nNúmero da conta: " + conta.getNumero() + "\nSaldo: " + conta.getSaldo(), 
+                "\nNúmero da conta: " + conta.getNumero() + "\nSaldo: " + conta.getSaldo(), //Outra forma: cliente.getConta().getSaldo()
                 "Informações do Cliente", JOptionPane.INFORMATION_MESSAGE);
-                return; //Sai do for caso não ache o nome do cliente
+                return; //O return interrompe o método após achar o cliente correspondente
             }
         }
         JOptionPane.showMessageDialog(form, "Cliente não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+
+    //Método mexe saldo
+    public void mexeSaldo(int numeroConta, String operacao)
+    {
+        for (Cliente cliente : clientes)
+        {
+            Conta conta = cliente.getConta();
+            if(conta.getNumero() == numeroConta) //Outra forma: cliente.getConta().getNumero()
+            {
+                String valor = JOptionPane.showInputDialog(form, "Qual valor deseja depositar?","Depósito", JOptionPane.DEFAULT_OPTION);
+                conta.deposito(Integer.parseInt(valor));
+                return;  //O return interrompe o método após achar o número correspondente
+            }
+        }      
+        JOptionPane.showMessageDialog(form, "Número de conta não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
     }
 }
