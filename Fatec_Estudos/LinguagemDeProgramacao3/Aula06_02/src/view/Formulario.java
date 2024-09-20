@@ -126,22 +126,26 @@ public class Formulario
 
     void mudaTextoResultado()
     {
-        //O if trata o erro de divisão por 0
+        //ERRO 1: divisão por 0
         if(conta instanceof Divisao && Float.parseFloat(txtValor2.getText()) == 0)
         {
             lblResult.setText("ERRO");
             JOptionPane.showMessageDialog(form, "Divisão por 0", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
         else
-        {
-            //Método recebe <-- String para float <-- Pega o valor
-            conta.setValor1(Float.parseFloat(txtValor1.getText()));
-            conta.setValor2(Float.parseFloat(txtValor2.getText()));
-            conta.calcular(); //Calcula e atribui ao "resultado"
-            
-            //Muda o texto <-- float para String <-- Pega o resultado
-            lblResult.setText(String.valueOf(conta.getResultado()));
+        {   //ERRO 2: campo(s) vazio(s)
+            if (!txtValor1.getText().isEmpty() && !txtValor2.getText().isEmpty())
+            {
+                //Método recebe <-- String para float <-- Pega o valor
+                conta.setValor1(Float.parseFloat(txtValor1.getText()));
+                conta.setValor2(Float.parseFloat(txtValor2.getText()));
+                conta.calcular(); //Calcula e atribui ao "resultado"
+                
+                //Muda o texto <-- float para String <-- Pega o resultado
+                lblResult.setText(String.valueOf(conta.getResultado()));
+            }
+            else
+                JOptionPane.showMessageDialog(form, "Preencha todos os campos", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 }
