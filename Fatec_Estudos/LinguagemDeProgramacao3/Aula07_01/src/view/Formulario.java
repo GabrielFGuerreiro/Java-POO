@@ -18,8 +18,8 @@ public class Formulario
 {
     private JFrame form;
 	private JLabel lblNome, lblCPF, lblSaldo, lblnumero;
-	private JTextField txtNome, txtCPF, txtSaldo, txtMexeSaldo, txtNumero;
-	private JButton btnCadastrar, btnMostraInfos, btnDepositar, btnSacar;
+	private JTextField txtNome, txtCPF, txtSaldo, txtNumero;
+	private JButton btnCadastrar, btnMostraInfos, btnDepositar, btnSacar, btnListaClientes, btnListaContas;
     private ArrayList<Cliente> clientes; //Lista cliente
     Cliente novoCliente;
 
@@ -32,7 +32,7 @@ public class Formulario
     public void inicializarComponentes()
     {
         form = new JFrame("Cadastro");
-        form.setBounds(500, 200, 500, 400);
+        form.setBounds(500, 200, 500, 450);
 		form.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		form.setLayout(null);
 
@@ -148,10 +148,25 @@ public class Formulario
 			}
 		});
 
+        btnListaClientes = new JButton("LISTA CLIENTES");
+        btnListaClientes.setBounds(100, 290, 130, 50);
+        btnListaClientes.setBackground(Color.decode("#808080"));
+        btnListaClientes.setForeground(Color.white);
+        btnListaClientes.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+                String tipo = "cliente";
+               lista(tipo);
+			}
+		});
+
         painelDeConteudo.add(btnCadastrar);
         painelDeConteudo.add(btnMostraInfos);
         painelDeConteudo.add(btnDepositar);
         painelDeConteudo.add(btnSacar);
+        painelDeConteudo.add(btnListaClientes);
         form.setVisible(true);
     }
 
@@ -200,5 +215,19 @@ public class Formulario
         }      
         //Sai do for se não encontrar o número
         JOptionPane.showMessageDialog(form, "Número de conta não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+
+    public void lista(String tipo)
+    {
+        if(tipo.equals("cliente"))
+        {
+            String listaDeClientes = "";
+            for(Cliente cliente : clientes)
+            {
+                listaDeClientes += "Nome: " + cliente.getNome() + "\nCPF: " + cliente.getCPF() + "\n\n"; //Concatena os clientes
+            }
+            JOptionPane.showMessageDialog(form, listaDeClientes, "Lista de Clientes", 1);
+        }
+        
     }
 }
