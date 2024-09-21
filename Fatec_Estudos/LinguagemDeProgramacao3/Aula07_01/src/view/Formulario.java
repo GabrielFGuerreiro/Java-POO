@@ -162,11 +162,26 @@ public class Formulario
 			}
 		});
 
+        btnListaContas = new JButton("LISTA CONTAS");
+        btnListaContas.setBounds(250, 290, 130, 50);
+        btnListaContas.setBackground(Color.decode("#808080"));
+        btnListaContas.setForeground(Color.white);
+        btnListaContas.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+                String tipo = "conta";
+               lista(tipo);
+			}
+		});
+
         painelDeConteudo.add(btnCadastrar);
         painelDeConteudo.add(btnMostraInfos);
         painelDeConteudo.add(btnDepositar);
         painelDeConteudo.add(btnSacar);
         painelDeConteudo.add(btnListaClientes);
+        painelDeConteudo.add(btnListaContas);
         form.setVisible(true);
     }
 
@@ -217,6 +232,7 @@ public class Formulario
         JOptionPane.showMessageDialog(form, "Número de conta não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
     }
 
+    //Método lista cliente/conta
     public void lista(String tipo)
     {
         if(tipo.equals("cliente"))
@@ -228,6 +244,15 @@ public class Formulario
             }
             JOptionPane.showMessageDialog(form, listaDeClientes, "Lista de Clientes", 1);
         }
-        
+        else if(tipo.equals("conta"))
+        {
+            String listaDeContas = "";
+            for(Cliente cliente : clientes)
+            {
+                Conta conta = cliente.getConta();
+                listaDeContas += "\nNúmero da conta: " + conta.getNumero() + "\nSaldo: " + conta.getSaldo() + "\n\n";
+            }
+            JOptionPane.showMessageDialog(form, listaDeContas, "Lista de Contas", 1);
+        }
     }
 }
