@@ -158,7 +158,7 @@ public class Formulario
 			public void actionPerformed(ActionEvent e)
 			{
                 String tipo = "cliente";
-               lista(tipo);
+                lista(tipo);
 			}
 		});
 
@@ -172,7 +172,7 @@ public class Formulario
 			public void actionPerformed(ActionEvent e)
 			{
                 String tipo = "conta";
-               lista(tipo);
+                lista(tipo);
 			}
 		});
 
@@ -235,24 +235,34 @@ public class Formulario
     //Método lista cliente/conta
     public void lista(String tipo)
     {
-        if(tipo.equals("cliente"))
+        String lista = "";
+        switch (tipo)
         {
-            String listaDeClientes = "";
+            case "cliente": //Lista Clientes
             for(Cliente cliente : clientes)
-            {
-                listaDeClientes += "Nome: " + cliente.getNome() + "\nCPF: " + cliente.getCPF() + "\n\n"; //Concatena os clientes
-            }
-            JOptionPane.showMessageDialog(form, listaDeClientes, "Lista de Clientes", 1);
-        }
-        else if(tipo.equals("conta"))
-        {
-            String listaDeContas = "";
+                lista += "Nome: " + cliente.getNome() + "\nCPF: " + cliente.getCPF() + "\n\n"; //Concatena os clientes
+            
+            if(lista.isEmpty()) //Caso não haja nenhum cliente cadastrado
+                JOptionPane.showMessageDialog(form, "Nenhum cliente cadastrado", "AVISO", JOptionPane.WARNING_MESSAGE);
+            else
+                JOptionPane.showMessageDialog(form, lista, "Lista de Clientes", 1);
+
+            break;
+
+            case "conta":  //Lista contas
             for(Cliente cliente : clientes)
-            {
-                Conta conta = cliente.getConta();
-                listaDeContas += "\nNúmero da conta: " + conta.getNumero() + "\nSaldo: " + conta.getSaldo() + "\n\n";
-            }
-            JOptionPane.showMessageDialog(form, listaDeContas, "Lista de Contas", 1);
+                lista += "\nNúmero da conta: " + cliente.getConta().getNumero() + "\nSaldo: " + cliente.getConta().getSaldo() + "\n\n";
+
+            if(lista.isEmpty()) //Caso não haja nenhuma conta cadastrada
+                JOptionPane.showMessageDialog(form, "Nenhuma conta cadastrada", "AVISO", JOptionPane.WARNING_MESSAGE);
+            else
+                JOptionPane.showMessageDialog(form, lista, "Lista de Contas", 1);    
+            break;
+            
+            default: //
+                break;
         }
+            
+                
     }
 }
