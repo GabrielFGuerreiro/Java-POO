@@ -16,19 +16,24 @@ public class Principal
 
         while(true)
         {
-            System.out.println("Menu\n1.Cadastrar livros");
+            System.out.println("       Menu\n1.Cadastrar livro\n2.Cadastrar autor\n0.Sair");
             int numero = scanner.nextInt(); scanner.nextLine(); //Pega o enter
 
             switch (numero)
             {
                 case 1:
-                    //Cria uma variável do tipo livro e atribui o retorno (o objeto) do método a ela
                     cadastrar.cadastrarLivro(scanner); //Chama o método de cadastro, enviando como parâmetros o scanner e o autor
-                    System.out.println("Livro cadastrado com sucesso!");
+                    System.out.println("Livro cadastrado com sucesso!\n");
   
                     break;
             
                 case 2:
+                    cadastrar.cadastrarAutor(scanner);
+                    System.out.println("Autor cadastrado com sucesso!\n");
+
+                    break;
+
+                case 0:
                     scanner.close(); // Fecha o Scanner
                     return; // Encerra o programa
 

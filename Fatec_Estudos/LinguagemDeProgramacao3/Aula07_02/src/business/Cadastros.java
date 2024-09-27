@@ -21,16 +21,15 @@ public class Cadastros
         //⌵⌵⌵⌵⌵AUTOR⌵⌵⌵⌵⌵\\
         System.out.println("Digite um autor da lista ou cadastre um novo!\n1 - Cadastrar um novo autor.\n2 - Utilizar um já existente.");
         int numero = scanner.nextInt();
-        if(autores.isEmpty())
+        if(autores.isEmpty() && numero == 2)
         {
-            System.out.println("\nLista vazia!Cadastre um autor.");
+            System.out.println("\nLista vazia! Cadastre um autor.");
             numero = 1;
         }
         Autor novoAutor = null; //Declara a variável novoAutor
-        // if(numero == 1)
-        //     novoAutor = cadastrarAutor(scanner); //Chama o método para cadastrar novo autor, enviando como parâmetro o scanner
-        // else
-        if(numero == 2)
+        if(numero == 1)
+            novoAutor = cadastrarAutor(scanner); //Chama o método para cadastrar novo autor, enviando como parâmetro o scanner
+        else if(numero == 2)
         {
             while(novoAutor == null)
             {
@@ -53,18 +52,26 @@ public class Cadastros
 
         System.out.println("Digite o número de exemplares disponíveis:");
         int exemplaresDisponiveis = scanner.nextInt();
-        scanner.nextLine(); // Consumir a quebra de linha
 
         //Cria um novo objeto Livro
         Livro novoLivro = new Livro(titulo, novoAutor, genero, exemplaresDisponiveis);
         livros.add(novoLivro); //Adiciona o (objeto) novo livro à lista livros
     }    
 
-    // public Autor cadastrarAutor(Scanner scanner)
-    // {
+    public Autor cadastrarAutor(Scanner scanner)
+    {
+        System.out.println("Digite o nome do autor:");
+        String nome = scanner.nextLine();
+        
+        System.out.println("Digite a nacionalidade do autor:");
+        String nasciona = scanner.nextLine();
 
-    //     // Autor novoAutor = new Autor(null, null, null)
-    //     // autores.add(novoAutor); // Adiciona o (objeto) novo autor à lista autores
-    //     return novoAutor;
-    // }
+        System.out.println("Digite a data de nascimento do autor:");
+        String dtNasci = scanner.nextLine();
+
+        //Cria um novo objeto autor
+        Autor novoAutor = new Autor(nome, nasciona, dtNasci);
+        autores.add(novoAutor); // Adiciona o (objeto) novo autor à lista autores
+        return novoAutor;
+    }
 }
