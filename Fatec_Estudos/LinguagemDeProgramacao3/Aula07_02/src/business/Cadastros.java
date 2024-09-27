@@ -70,8 +70,8 @@ public class Cadastros
         String dtNasci = scanner.nextLine();
 
         //Cria um novo objeto autor
-        Autor novoAutor = new Autor(nome, nasciona, dtNasci);
+        Autor novoAutor = null;
         autores.add(novoAutor); // Adiciona o (objeto) novo autor à lista autores
-        return novoAutor;
+        return new Autor(nome, nasciona, dtNasci);
     }
 }
