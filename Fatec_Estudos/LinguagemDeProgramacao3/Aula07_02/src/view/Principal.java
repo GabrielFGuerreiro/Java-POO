@@ -18,8 +18,10 @@ public class Principal
 
         while(true)
         {
-            System.out.println("       Menu\n1.Cadastrar livro\n2.Cadastrar autor\n3.Lista livros\n4.Lista autores\n0.Sair");
-            int numero = scanner.nextInt(); scanner.nextLine(); //Pega o enter
+            System.out.println("\n" + "     [MENU]\n1.Cadastrar livro\n2.Cadastrar autor\n3.Lista livros\n4.Lista autores\n0.Sair");
+            System.out.println("Digite uma opção:");
+            int numero = scanner.nextInt();
+            scanner.nextLine(); //Pega o enter
 
             switch(numero)
             {
@@ -34,7 +36,12 @@ public class Principal
                     System.out.println("Autor cadastrado com sucesso!\n");
 
                     break;
-                
+
+                case 3:
+                    Livro.listaLivros(livros);
+                    
+                    break;
+
                 case 4:
                     //Autor objAutor = new Autor(null, null, null);  <--- outra possibilidade era criar uma instância, enviando parâmetros nulos.
                     //       ^--- Não muito recomendada, pois criaria um objeto apenas para acessar um método.
