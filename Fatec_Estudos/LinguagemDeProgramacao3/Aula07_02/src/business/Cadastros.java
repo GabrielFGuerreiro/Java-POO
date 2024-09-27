@@ -20,30 +20,33 @@ public class Cadastros
 
         //⌵⌵⌵⌵⌵AUTOR⌵⌵⌵⌵⌵\\
         System.out.println("Digite um autor da lista ou cadastre um novo!\n1 - Cadastrar um novo autor.\n2 - Utilizar um já existente.");
-        int numero = scanner.nextInt();
-        if(autores.isEmpty() && numero == 2)
+        int opcaoNum = scanner.nextInt();  //Recebe input
+        scanner.nextLine(); // Consumir a quebra de linha
+
+        if(autores.isEmpty() && opcaoNum == 2) //Caso não haja nenhum autor cadastrado
         {
             System.out.println("\nLista vazia! Cadastre um autor.");
-            numero = 1;
+            opcaoNum = 1;
         }
-        Autor novoAutor = null; //Declara a variável novoAutor
-        if(numero == 1)
+
+        Autor novoAutor = null; //Declara a variável novoAutor do tipo autor
+        if(opcaoNum == 1)
             novoAutor = cadastrarAutor(scanner); //Chama o método para cadastrar novo autor, enviando como parâmetro o scanner
-        else if(numero == 2)
+        else if(opcaoNum == 2)
         {
             while(novoAutor == null)
             {
-                //Exibe a lista de autores existentes com um for-each
-                System.out.println("Selecione um autor existente:");
-                int i = 0; //Inicializa um contador para o índice
-                for (Autor autor : autores)
+                int i = 1; //Inicializa um contador para o índice
+                for (Autor autor : autores)     //Exibe a lista de autores existentes com um for-each
                 {
-                    System.out.println(i + ": " + autor.getNome()); //Exibe o nome do autor com o índice
+                    System.out.println(i + "º: " + autor.getNome()); //Exibe o nome do autor com o índice
                     i++; 
                 }
+                System.out.println("Selecione um autor existente:");
+                opcaoNum = scanner.nextInt(); //Recebe input (do índice)
             
-                if (i >= 0 && i < autores.size())
-                    novoAutor = autores.get(i); //Retorna o autor selecionado   
+                if (opcaoNum >= 1 && opcaoNum < autores.size())
+                    novoAutor = autores.get(opcaoNum); //Retorna o autor selecionado com base no índice
                 else
                     System.out.println("Índice inválido! Tente novamente.");
             }
