@@ -31,17 +31,17 @@ public class Cadastros
         {
             while(novoAutor == null)
             {
-                int i = 1; //Inicializa um contador para o índice
+                int i = 0; //Inicializa um contador para o índice
                 for (Autor autor : autores)     //Exibe a lista de autores existentes com um for-each
                 {
-                    System.out.println(i + "º: " + autor.getNome()); //Exibe o nome do autor com o índice
+                    System.out.println(i+1 + "º: " + autor.getNome()); //Exibe o nome do autor com o índice
                     i++; 
                 }
                 System.out.println("Selecione um autor existente:");
                 opcaoNum = scanner.nextInt(); //Recebe input (do índice)
-            
-                if (opcaoNum >= 1 && opcaoNum < autores.size())
-                    novoAutor = autores.get(opcaoNum); //Retorna o autor selecionado com base no índice
+
+                if (opcaoNum >= 1 && opcaoNum <= autores.size())
+                    novoAutor = autores.get(opcaoNum - 1); //Retorna o autor selecionado com base no índice ("-1" pq na lista começa com 1, mas na verdade começa com 0)
                 else
                     System.out.println("Índice inválido! Tente novamente.");
             }
@@ -70,8 +70,8 @@ public class Cadastros
         String dtNasci = scanner.nextLine();
 
         //Cria um novo objeto autor
-        Autor novoAutor = null;
+        Autor novoAutor = new Autor(nome, nasciona, dtNasci);;
         autores.add(novoAutor); // Adiciona o (objeto) novo autor à lista autores
-        return new Autor(nome, nasciona, dtNasci);
+        return novoAutor;
     }
 }

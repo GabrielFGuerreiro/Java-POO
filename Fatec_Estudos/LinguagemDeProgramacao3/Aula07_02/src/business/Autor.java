@@ -12,11 +12,12 @@ public class Autor
         this.nacionalidade = nacionalidade;
         this.dataDeNascimento = dataDeNascimento;
     }
+    
     public String getNome() {return nome;}
     public String getNacionalidade() {return nacionalidade;}
     public String getDataDeNascimento() {return dataDeNascimento;}
 
-    public static void  listaAutores(ArrayList<Autor> autores) 
+    public static void listaAutores(ArrayList<Autor> autores) 
     {//Método é static para não ter que criar um objeto (na classe principal) que iria apenas ser usado para acessar esse método.
         if(!autores.isEmpty())
         {   
@@ -28,6 +29,6 @@ public class Autor
             }
         }
         else
-            System.out.println("Lista de autores vazia! Cadastre pelo menos um autor");
+            System.out.println("Lista de autores vazia! Cadastre pelo menos um autor.");
     }
 }
