@@ -2,15 +2,10 @@ package business;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import business.Livro;
-import business.Autor;
 
 public class Cadastros
 {
-    ArrayList<Livro> livros = new ArrayList<>(); //Cria a lista de livros
-    ArrayList<Autor> autores = new ArrayList<>(); //Cria a lista de autores
-    
-    public void cadastrarLivro(Scanner scanner)
+    public void cadastrarLivro(Scanner scanner, ArrayList<Livro> livros, ArrayList<Autor> autores)
     {
         System.out.println("Digite o título do livro:");
         String titulo = scanner.nextLine(); //Recebe input e atribui a variável título
@@ -31,7 +26,7 @@ public class Cadastros
 
         Autor novoAutor = null; //Declara a variável novoAutor do tipo autor
         if(opcaoNum == 1)
-            novoAutor = cadastrarAutor(scanner); //Chama o método para cadastrar novo autor, enviando como parâmetro o scanner
+            novoAutor = cadastrarAutor(scanner, autores); //Chama o método de cadastro, enviando como parâmetro o scanner e a lista de autores
         else if(opcaoNum == 2)
         {
             while(novoAutor == null)
@@ -61,7 +56,9 @@ public class Cadastros
         livros.add(novoLivro); //Adiciona o (objeto) novo livro à lista livros
     }    
 
-    public Autor cadastrarAutor(Scanner scanner)
+
+
+    public Autor cadastrarAutor(Scanner scanner, ArrayList<Autor> autores)
     {
         System.out.println("Digite o nome do autor:");
         String nome = scanner.nextLine();
