@@ -21,7 +21,7 @@ public class Principal
         {
             System.out.println(
             "\n" +"     [MENU]\n1.Cadastrar livro\n2.Cadastrar autor\n3.Lista livros\n4.Lista autores\n5.Infos biblioteca"+
-            "\n0.Sair");
+            "\n6.Adiciona exemplares\n0.Sair");
             System.out.println("Digite uma opção:");
             int numero = scanner.nextInt();
             scanner.nextLine(); //Pega o enter
@@ -54,9 +54,13 @@ public class Principal
                 
                 case 5:
                     Biblioteca biblio = new Biblioteca("Library", "Rua da Saudade, 123");
-                    biblio.criarListaLivrosDisponiveis(livros);
                     System.out.println("Nome: " + biblio.getNome() + "\nEndereço: " + biblio.getEndereco() +
-                    "\nLivros disponíveis: " + biblio.getListaLivrosDisponiveis());
+                    "\nLivros disponíveis: " + biblio.getListaLivrosDisponiveis(livros));
+
+                    break;
+
+                case 6:
+
 
                     break;
 

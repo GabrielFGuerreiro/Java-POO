@@ -16,13 +16,14 @@ public class Biblioteca
 
     public String getNome() {return nome;}
     public String getEndereco() {return endereco;}
-    public ArrayList<String> getListaLivrosDisponiveis() {return listaLivrosDisponiveis;}
 
-    public void criarListaLivrosDisponiveis(ArrayList<Livro> livros)
+    public ArrayList<String> getListaLivrosDisponiveis(ArrayList<Livro> livros) //Recebe a lista de livros
     {
         for (Livro livroCadas : livros)
         {
-            listaLivrosDisponiveis.add(livroCadas.getTitulo());
+            listaLivrosDisponiveis.add(livroCadas.getTitulo()); //adiciona o título em uma outra lista
         }
+        
+        return listaLivrosDisponiveis;
     }
 }
