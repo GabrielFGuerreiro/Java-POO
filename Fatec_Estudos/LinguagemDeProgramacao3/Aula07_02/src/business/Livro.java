@@ -22,10 +22,27 @@ public class Livro
     public Autor getAutor() {return autor;}
     public int getExemplaresDisponiveis() {return exemplaresDisponiveis;}
 
-    public void setExemplaresDisponiveis(int exemplaresDisponiveis)
+    public void setExemplaresDisponiveis(int quantidadeDesejada, int opcao )
     {
-        this.exemplaresDisponiveis += exemplaresDisponiveis;
+        if(opcao == 1) //Adicionar
+        {    
+            this.exemplaresDisponiveis += quantidadeDesejada;
+            System.out.println("Exemplares adicionados com sucesso!");
+        }
+
+        else if(opcao == 2 && exemplaresDisponiveis < quantidadeDesejada) //Pegar mais do que tem (erro)
+        {
+            System.out.println("Quantidade indisponível para empréstimo.");
+            return;
+        }
+
+        else //Pegar
+        {
+            this.exemplaresDisponiveis -= quantidadeDesejada;
+            System.out.println("Empréstimo realizado com sucesso!");
+        }
     }
+
 
     public static void listaLivros(ArrayList<Livro> livros) 
     {//Método é static para não ter que criar um objeto (na classe principal) que iria apenas ser usado para acessar esse método.
@@ -43,29 +60,47 @@ public class Livro
     }
 
 
-    public static void adicionaExemplares(ArrayList<Livro> livros, Scanner scanner)
+    public static void modificarExemplares(ArrayList<Livro> livros, Scanner scanner)
     {
         int i = 0;
-        int opcaoNum;
-        Livro novoLivro = null; //Declara a variável novoAutor do tipo autor
+        int escolha;
+        Livro novoLivro = null; //Declara a variável novoAutor do tipo livro
         
-        while(novoLivro == null)
+        if(livros.isEmpty())//Verificação se a lista esta vazia
         {
-            for (Livro livroCadast : livros)     //Exibe a lista de livros existentes com um for-each
-            {
-                System.out.println(i+1 + "º: " + livroCadast.getTitulo()); //Exibe o nome do autor com o índice
-                i++; 
-            }
-            System.out.println("Selecione um livro que irá receber mais exemplares:");
-            opcaoNum = scanner.nextInt(); //Recebe input (do índice)
+            System.out.println("Lista vazia! Cadestre pelo menos um livro.");
+            return;
+        } 
+        
+        do //Decidir se irá adicionar ou retirar exemplares
+        {
+            System.out.println("Deseja adicionar mais exemplares ou realizar um empréstimo?\n1.Adicioanar\n2.Empréstimo");
+            escolha = scanner.nextInt();
             
-            if (opcaoNum >= 1 && opcaoNum <= livros.size())
-                novoLivro = livros.get(opcaoNum - 1); //Retorna o livro selecionado com base no índice ("-1" pq na lista começa com 1, mas na verdade começa com 0)
+            if(escolha != 1 && escolha != 2) 
+                System.out.println("Opção inválida.");
+
+        }while(escolha != 1 && escolha != 2);
+
+        for (Livro livroCadast : livros)     //Exibe a lista de livros existentes com um for-each
+        {
+            System.out.println(i+1 + "º: " + livroCadast.getTitulo()); //Exibe o nome do autor com o índice
+            i++; 
+        }
+        System.out.println("Selecione o livro correspondente:");
+        
+        while(novoLivro == null) //Só irá parar até que o novoLivro receba o livro desejado (de acordo com o índice)
+        {
+            int indice = scanner.nextInt(); //Recebe input (do índice do livro) 
+            
+            if (indice >= 1 && indice <= livros.size()) //Verificarção do final: verificar se o indice esta correto
+            {
+                novoLivro = livros.get(indice - 1); //Retorna/atribui o livro selecionado com base no índice ("-1" pq na lista começa com 1, mas na verdade começa com 0)
+                System.out.println("Diga a quantidade de exemplares.");
+                novoLivro.setExemplaresDisponiveis(scanner.nextInt(), escolha);
+            }
             else
                 System.out.println("Índice inválido! Tente novamente.");
-        }
-        System.out.println("Quantos exemplares deseja adicionar?");
-        opcaoNum = scanner.nextInt();
-        novoLivro.setExemplaresDisponiveis(opcaoNum);
-    }
-}
+        }//while
+    }//Método modificar exemplares
+}//Classe livro

@@ -20,8 +20,8 @@ public class Principal
         while(true)
         {
             System.out.println(
-            "\n" +"     [MENU]\n1.Cadastrar livro\n2.Cadastrar autor\n3.Lista livros\n4.Lista autores\n5.Infos biblioteca"+
-            "\n6.Adiciona exemplares\n0.Sair");
+            "\n" +"     [MENU]\n1.Cadastrar livro\n2.Cadastrar autor\n3.Listar livros\n4.Listar autores\n5.Infos biblioteca"+
+            "\n6.Adicionar exemplares/Realizar empréstimo\n0.Sair");
             System.out.println("Digite uma opção:");
             int numero = scanner.nextInt();
             scanner.nextLine(); //Pega o enter
@@ -60,7 +60,7 @@ public class Principal
                     break;
 
                 case 6:
-                    Livro.adicionaExemplares(livros, scanner);
+                    Livro.modificarExemplares(livros, scanner);
 
                     break;
 
