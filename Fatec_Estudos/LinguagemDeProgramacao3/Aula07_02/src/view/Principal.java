@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import business.Livro;
 import business.Autor;
+import business.Biblioteca;
 import business.Cadastros;
 
 public class Principal
@@ -18,7 +19,9 @@ public class Principal
 
         while(true)
         {
-            System.out.println("\n" + "     [MENU]\n1.Cadastrar livro\n2.Cadastrar autor\n3.Lista livros\n4.Lista autores\n0.Sair");
+            System.out.println(
+            "\n" +"     [MENU]\n1.Cadastrar livro\n2.Cadastrar autor\n3.Lista livros\n4.Lista autores\n5.Infos biblioteca"+
+            "\n0.Sair");
             System.out.println("Digite uma opção:");
             int numero = scanner.nextInt();
             scanner.nextLine(); //Pega o enter
@@ -48,8 +51,17 @@ public class Principal
                     Autor.listaAutores(autores);  //Um método static pode ser chamado diretamente pelo nome da classe, sem precisar criar um objeto.
              
                     break;
+                
+                case 5:
+                    Biblioteca biblio = new Biblioteca("Library", "Rua da Saudade, 123");
+                    biblio.criarListaLivrosDisponiveis(livros);
+                    System.out.println("Nome: " + biblio.getNome() + "\nEndereço: " + biblio.getEndereco() +
+                    "\nLivros disponíveis: " + biblio.getListaLivrosDisponiveis());
+
+                    break;
 
                 case 0:
+                    System.out.println("Encerrando...");
                     scanner.close(); //Fecha o Scanner
                     return; //Encerra o programa (sai do while infinito)
 
