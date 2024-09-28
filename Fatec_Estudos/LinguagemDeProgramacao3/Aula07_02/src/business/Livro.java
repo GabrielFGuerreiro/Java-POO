@@ -1,6 +1,7 @@
 package business;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Livro
 {
@@ -23,7 +24,7 @@ public class Livro
 
     public void setExemplaresDisponiveis(int exemplaresDisponiveis)
     {
-        this.exemplaresDisponiveis = exemplaresDisponiveis;
+        this.exemplaresDisponiveis += exemplaresDisponiveis;
     }
 
     public static void listaLivros(ArrayList<Livro> livros) 
@@ -39,5 +40,32 @@ public class Livro
         }
         else
             System.out.println("Lista de livros vazia! Cadastre pelo menos um livro");
+    }
+
+
+    public static void adicionaExemplares(ArrayList<Livro> livros, Scanner scanner)
+    {
+        int i = 0;
+        int opcaoNum;
+        Livro novoLivro = null; //Declara a variável novoAutor do tipo autor
+        
+        while(novoLivro == null)
+        {
+            for (Livro livroCadast : livros)     //Exibe a lista de livros existentes com um for-each
+            {
+                System.out.println(i+1 + "º: " + livroCadast.getTitulo()); //Exibe o nome do autor com o índice
+                i++; 
+            }
+            System.out.println("Selecione um livro que irá receber mais exemplares:");
+            opcaoNum = scanner.nextInt(); //Recebe input (do índice)
+            
+            if (opcaoNum >= 1 && opcaoNum <= livros.size())
+                novoLivro = livros.get(opcaoNum - 1); //Retorna o livro selecionado com base no índice ("-1" pq na lista começa com 1, mas na verdade começa com 0)
+            else
+                System.out.println("Índice inválido! Tente novamente.");
+        }
+        System.out.println("Quantos exemplares deseja adicionar?");
+        opcaoNum = scanner.nextInt();
+        novoLivro.setExemplaresDisponiveis(opcaoNum);
     }
 }

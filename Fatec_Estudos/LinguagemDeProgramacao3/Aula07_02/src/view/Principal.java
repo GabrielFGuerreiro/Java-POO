@@ -60,7 +60,7 @@ public class Principal
                     break;
 
                 case 6:
-
+                    Livro.adicionaExemplares(livros, scanner);
 
                     break;
 
