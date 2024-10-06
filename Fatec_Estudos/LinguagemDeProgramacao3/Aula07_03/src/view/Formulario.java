@@ -54,6 +54,7 @@ public class Formulario
                 else
                     horario.getHora().setUnidade(24);
 
+                //Seta o valor <<< int-->String   <<<  Recebe o valor
                 lblHora.setText(String.valueOf(horario.getHora().getUnidade()));
             }
         });
@@ -67,8 +68,15 @@ public class Formulario
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                horario.getHora().decrementaUnidade(1);
-                lblHora.setText(String.valueOf(horario.getHora().getUnidade()));
+                if(horario.getHora().getUnidade() > 0)
+                {
+                    horario.getHora().decrementaUnidade(1);
+                    lblHora.setText(String.valueOf(horario.getHora().getUnidade()));
+                }
+                else
+                    lblHora.setText("00");
+
+                //Seta o valor <<< int-->String   <<<  Recebe o valor
             }
         });
 
@@ -89,6 +97,8 @@ public class Formulario
             public void actionPerformed(ActionEvent e)
             {
                 horario.getMinuto().incrementaUnidade(1);
+
+                //Seta o valor <<< int-->String   <<<  Recebe o valor
                 lblMinuto.setText(String.valueOf(horario.getMinuto().getUnidade()));
             }
         });
@@ -103,6 +113,8 @@ public class Formulario
             public void actionPerformed(ActionEvent e)
             {
                 horario.getMinuto().decrementaUnidade(1);
+
+                //Seta o valor <<< int-->String   <<<  Recebe o valor
                 lblMinuto.setText(String.valueOf(horario.getMinuto().getUnidade()));
             }
         });
