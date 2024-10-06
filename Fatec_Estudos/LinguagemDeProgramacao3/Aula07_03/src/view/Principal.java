@@ -8,7 +8,7 @@ public class Principal
     {
 
         //1.Instância de horario, levando valores como parâmetros
-        Horario horario = new Horario(10, 30);
+        Horario horario = new Horario(00, 00);
         new Formulario(horario);
 
         //Usa o objeto horario para acessar os métodos de retorno, utilizndo as variáveis

@@ -34,7 +34,7 @@ public class Formulario
         Font fonte1 = new Font("Arial", Font.BOLD, 30);
 
         //Hora
-        lblHora = new JLabel("10");
+        lblHora = new JLabel("00");
         lblHora.setBounds(225, 80, 200, 200);
         lblHora.setFont(fonte1);
         painelDeConteudo.add(lblHora);
@@ -48,7 +48,12 @@ public class Formulario
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                horario.getHora().incrementaUnidade(1);
+                //Controle para a hora não ultrapassar 24
+                if(horario.getHora().getUnidade() < 24)
+                    horario.getHora().incrementaUnidade(1);
+                else
+                    horario.getHora().setUnidade(24);
+
                 lblHora.setText(String.valueOf(horario.getHora().getUnidade()));
             }
         });
@@ -69,7 +74,7 @@ public class Formulario
 
 
         //Minuto
-        lblMinuto = new JLabel("30");
+        lblMinuto = new JLabel("00");
         lblMinuto.setBounds(275, 80, 200, 200);
         lblMinuto.setFont(fonte1);
         painelDeConteudo.add(lblMinuto);
